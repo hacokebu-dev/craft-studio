@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "home": "Home",
+    "project": "Project",
+    "blog": "Blog"
+  },
+  "hero": {
+    "title": "Crafting small digital tools and toys"
+  },
+  "intro": {
+    "section1": {
+      "title": "HACO & KEBU",
+      "pronunciation": "[haː.ko æn'ke.bu]",
+      "description": "is an abbreviation of 'Have Conviction and Keep Building'. We keep building without wavering."
+    },
+    "section2": {
+      "description": "Currently, we are a team of one. We will maintain a small size going forward, and engage in activities that allow a small group to have almost limitless freedom."
+    },
+    "section3": {
+      "description1": "We welcome various forms of collaboration including side projects, campaigns, and interviews.",
+      "description2": "If you send an email to hacokebu@gmail.com, we will respond within 3 business days.",
+      "description3": "For project requests, please click the button below to fill out the form. We recommend this for faster and more accurate responses.",
+      "note": "For price comparisons, please include your request, estimated budget or 1% of project value, or minimum expected quality standards. We will not respond to inquiries without these details.",
+      "button": "Request a Project"
+    }
+  },
+  "recentProjects": {
+    "title": "Recent Projects",
+    "more": "More"
+  },
+  "recentBlog": {
+    "title": "Recent Posts",
+    "more": "More"
+  },
+  "footer": {
+    "copyright": "© 2026 HACO & KEBU. All rights reserved.",
+    "email": "hacokebu@gmail.com"
+  },
+  "project": {
+    "backButton": "Back"
+  },
+  "blog": {
+    "all": "All",
+    "backButton": "Back"
+  }
+}
