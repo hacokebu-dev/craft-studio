@@ -1,30 +1,38 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import heroBg from '@/assets/hero-bg.jpg';
 
 const HeroSection = () => {
   const { t } = useTranslation();
+  const containerRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
-    // Load Unicorn Studio script
+    const initUnicornStudio = () => {
+      const us = (window as any).UnicornStudio;
+      if (us && typeof us.init === 'function') {
+        // Destroy existing instances first, then reinitialize
+        if (typeof us.destroy === 'function') {
+          us.destroy();
+        }
+        us.init();
+      }
+    };
+
+    // Load Unicorn Studio script if not loaded
     if (!(window as any).UnicornStudio) {
-      (window as any).UnicornStudio = { isInitialized: false };
       const script = document.createElement('script');
       script.src = 'https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.0.0/dist/unicornStudio.umd.js';
       script.onload = () => {
-        const us = (window as any).UnicornStudio;
-        if (us && !us.isInitialized && typeof us.init === 'function') {
-          us.init();
-          us.isInitialized = true;
-        }
+        initUnicornStudio();
       };
       document.head.appendChild(script);
     } else {
-      const us = (window as any).UnicornStudio;
-      if (us && !us.isInitialized && typeof us.init === 'function') {
-        us.init();
-        us.isInitialized = true;
-      }
+      // Script already loaded, just reinitialize
+      // Small delay to ensure DOM is ready
+      const timer = setTimeout(() => {
+        initUnicornStudio();
+      }, 100);
+      return () => clearTimeout(timer);
     }
   }, []);
   
@@ -38,6 +46,7 @@ const HeroSection = () => {
       
       {/* Unicorn Studio Background */}
       <div 
+        ref={containerRef}
         data-us-project="HglN3zIeCBisiuYg6E4k" 
         className="absolute inset-0 w-full h-full"
         style={{ width: '100%', height: '100%' }}
