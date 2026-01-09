@@ -93,7 +93,7 @@
   }
 
   .section-number {
-    @apply text-[4rem] md:text-[6rem] font-bold leading-none text-accent;
+    @apply text-[4rem] md:text-[6rem] font-extrabold leading-none text-ivory;
   }
 
   .btn-primary {
