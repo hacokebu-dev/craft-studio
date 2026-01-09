@@ -14,6 +14,6 @@ A platform that allows users to cultivate their own digital garden of knowledge,
 
 Here's another view of the project:
 
-![Additional Image](/assets/project-3.jpg)
+![Additional Image](/assets/project-2.jpg)
 
 This shows the minimalist design approach we took for the interface.
