@@ -1,5 +1,3 @@
-import matter from 'gray-matter';
-
 export interface BlogPost {
   id: string;
   title: string;
@@ -17,6 +15,40 @@ export interface Project {
   content: string;
 }
 
+// Simple frontmatter parser (browser-compatible)
+function parseFrontmatter(rawContent: string): { data: Record<string, string>; content: string } {
+  const lines = rawContent.split('\n');
+  const data: Record<string, string> = {};
+  let content = rawContent;
+  
+  if (lines[0]?.trim() === '---') {
+    let endIndex = -1;
+    for (let i = 1; i < lines.length; i++) {
+      if (lines[i]?.trim() === '---') {
+        endIndex = i;
+        break;
+      }
+      const line = lines[i];
+      const colonIndex = line.indexOf(':');
+      if (colonIndex > 0) {
+        const key = line.substring(0, colonIndex).trim();
+        let value = line.substring(colonIndex + 1).trim();
+        // Remove surrounding quotes if present
+        if ((value.startsWith('"') && value.endsWith('"')) || 
+            (value.startsWith("'") && value.endsWith("'"))) {
+          value = value.slice(1, -1);
+        }
+        data[key] = value;
+      }
+    }
+    if (endIndex > 0) {
+      content = lines.slice(endIndex + 1).join('\n').trim();
+    }
+  }
+  
+  return { data, content };
+}
+
 // Import all markdown files using Vite's glob import
 const blogFilesEn = import.meta.glob('/src/content/blog/en/*.md', { query: '?raw', import: 'default', eager: true });
 const blogFilesKo = import.meta.glob('/src/content/blog/ko/*.md', { query: '?raw', import: 'default', eager: true });
@@ -24,25 +56,25 @@ const projectFilesEn = import.meta.glob('/src/content/projects/en/*.md', { query
 const projectFilesKo = import.meta.glob('/src/content/projects/ko/*.md', { query: '?raw', import: 'default', eager: true });
 
 function parseBlogPost(rawContent: string): BlogPost {
-  const { data, content } = matter(rawContent);
+  const { data, content } = parseFrontmatter(rawContent);
   return {
     id: data.id || '',
     title: data.title || '',
     date: data.date || '',
     category: data.category || '',
-    content: content.trim(),
+    content: content,
   };
 }
 
 function parseProject(rawContent: string): Project {
-  const { data, content } = matter(rawContent);
+  const { data, content } = parseFrontmatter(rawContent);
   return {
     id: data.id || '',
     number: data.number || '',
     title: data.title || '',
     date: data.date || '',
     thumbnail: data.thumbnail || '',
-    content: content.trim(),
+    content: content,
   };
 }
 
@@ -58,9 +90,8 @@ export function getBlogPosts(lang: 'en' | 'ko'): BlogPost[] {
     }
   }
   
-  // Sort by date (newest first) - assuming date format like "Jan 9, 2025" or "2025년 1월 9일"
+  // Sort by date (newest first)
   return posts.sort((a, b) => {
-    // Try to parse dates, fall back to string comparison
     const dateA = new Date(a.date.replace(/년|월|일/g, match => {
       if (match === '년') return '/';
       if (match === '월') return '/';
@@ -92,7 +123,7 @@ export function getProjects(lang: 'en' | 'ko'): Project[] {
     }
   }
   
-  // Sort by number (descending - higher number first)
+  // Sort by number (descending)
   return projects.sort((a, b) => parseInt(b.number) - parseInt(a.number));
 }
 
