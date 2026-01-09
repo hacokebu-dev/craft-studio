@@ -4,7 +4,7 @@ const IntroductionSection = () => {
   const { t } = useTranslation();
   
   return (
-    <section className="py-24 md:py-32 bg-background">
+    <section className="py-24 md:py-32 bg-background relative z-10 -mt-[72px]">
       <div className="container-main">
         <div className="space-y-24 md:space-y-32">
           {/* Section 01 */}

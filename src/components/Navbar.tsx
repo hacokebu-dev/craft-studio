@@ -32,24 +32,22 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
       <div className="container-main">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-[100px]">
           <Logo />
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-12">
-            <div className="flex items-center gap-8">
-              {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={getLocalizedPath(item.path)}
-                  className={`text-sm font-medium transition-colors ${
-                    isActive(item.path) ? 'text-accent' : 'text-ivory hover:text-accent'
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
+          {navItems.map((item) => (
+            <Link
+              key={item.path}
+              to={getLocalizedPath(item.path)}
+              className={`hidden md:block text-[1.25rem] transition-colors ${
+                isActive(item.path) ? 'text-accent font-extrabold' : 'text-ivory font-medium hover:text-accent'
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
+          <div className="hidden md:block">
             <LanguageSelector />
           </div>
           
