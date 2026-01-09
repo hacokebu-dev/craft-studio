@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Layout from '@/components/Layout';
-import { blogPosts, categories } from '@/data/blog';
+import { getBlogPosts, categories } from '@/lib/content';
 import { useLanguage } from '@/hooks/useLanguage';
 
 const BlogList = () => {
@@ -10,9 +10,11 @@ const BlogList = () => {
   const { getLocalizedPath, currentLang } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState('all');
   
+  const allPosts = getBlogPosts(currentLang as 'en' | 'ko');
+  
   const filteredPosts = selectedCategory === 'all'
-    ? blogPosts
-    : blogPosts.filter((post) => 
+    ? allPosts
+    : allPosts.filter((post) => 
         post.category.toLowerCase() === selectedCategory.toLowerCase()
       );
   
@@ -44,10 +46,10 @@ const BlogList = () => {
                 className="blog-item group"
               >
                 <h2 className="text-ivory font-medium text-lg group-hover:text-accent transition-colors flex-1 min-w-0">
-                  {currentLang === 'ko' ? post.titleKo : post.title}
+                  {post.title}
                 </h2>
                 <span className="text-muted-foreground text-sm whitespace-nowrap shrink-0">
-                  {currentLang === 'ko' ? post.dateKo : post.date}
+                  {post.date}
                 </span>
               </Link>
             ))}

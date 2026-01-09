@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowRight } from 'lucide-react';
-import { projects } from '@/data/projects';
+import { getProjects } from '@/lib/content';
 import { useLanguage } from '@/hooks/useLanguage';
 
 const RecentProjectsSection = () => {
   const { t } = useTranslation();
   const { getLocalizedPath, currentLang } = useLanguage();
   
-  const recentProjects = projects.slice(0, 6);
+  const recentProjects = getProjects(currentLang as 'en' | 'ko').slice(0, 6);
   
   return (
     <section className="py-24 md:py-32 bg-background">
@@ -41,7 +41,7 @@ const RecentProjectsSection = () => {
               >
                 <img
                   src={project.thumbnail}
-                  alt={currentLang === 'ko' ? project.titleKo : project.title}
+                  alt={project.title}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -51,10 +51,10 @@ const RecentProjectsSection = () => {
                 </span>
                 <div>
                   <h3 className="text-ivory font-medium group-hover:text-accent transition-colors">
-                    {currentLang === 'ko' ? project.titleKo : project.title}
+                    {project.title}
                   </h3>
                   <p className="text-muted-foreground text-sm mt-1">
-                    {currentLang === 'ko' ? project.dateKo : project.date}
+                    {project.date}
                   </p>
                 </div>
               </div>
