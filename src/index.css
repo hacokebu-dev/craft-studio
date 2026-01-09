@@ -205,3 +205,13 @@
     @apply px-4;
   }
 }
+
+/* Hide Unicorn Studio watermark */
+[data-us-project] a[href*="unicorn"],
+[data-us-project] img[alt*="unicorn"],
+[data-us-project] > div > a,
+[data-us-project] [style*="position: absolute"][style*="bottom"] a {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
