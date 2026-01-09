@@ -43,7 +43,7 @@ const HeroSection = () => {
   }, []);
   
   return (
-    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-background">
+    <section className="relative h-[780px] w-full overflow-hidden flex items-center justify-center bg-background">
       {/* Unicorn Studio Background */}
       <div 
         ref={containerRef}
@@ -59,7 +59,10 @@ const HeroSection = () => {
       
       {/* Content */}
       <div className="relative z-10 text-center px-8">
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-ivory leading-tight max-w-4xl">
+        <h1 
+          className="text-[5rem] font-extrabold text-ivory max-w-4xl whitespace-pre-line"
+          style={{ lineHeight: '1.3' }}
+        >
           {t('hero.title')}
         </h1>
       </div>
