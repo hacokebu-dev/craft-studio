@@ -2,7 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import Layout from '@/components/Layout';
-import { blogPosts } from '@/data/blog';
+import { getBlogPost } from '@/lib/content';
 import { useLanguage } from '@/hooks/useLanguage';
 
 const BlogDetail = () => {
@@ -10,7 +10,7 @@ const BlogDetail = () => {
   const navigate = useNavigate();
   const { currentLang } = useLanguage();
   
-  const post = blogPosts.find((p) => p.id === id);
+  const post = getBlogPost(id || '', currentLang as 'en' | 'ko');
   
   if (!post) {
     return (
@@ -21,11 +21,6 @@ const BlogDetail = () => {
       </Layout>
     );
   }
-  
-  const title = currentLang === 'ko' ? post.titleKo : post.title;
-  const date = currentLang === 'ko' ? post.dateKo : post.date;
-  const category = currentLang === 'ko' ? post.categoryKo : post.category;
-  const content = currentLang === 'ko' ? post.contentKo : post.content;
   
   return (
     <Layout>
@@ -42,12 +37,12 @@ const BlogDetail = () => {
                 >
                   <ArrowLeft className="w-4 h-4" />
                 </button>
-                <span className="text-accent text-sm">{date}</span>
+                <span className="text-accent text-sm">{post.date}</span>
                 <span className="text-muted-foreground">|</span>
-                <span className="text-accent text-sm">{category}</span>
+                <span className="text-accent text-sm">{post.category}</span>
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-ivory leading-tight">
-                {title}
+                {post.title}
               </h1>
             </header>
             
@@ -69,7 +64,7 @@ const BlogDetail = () => {
                   ),
                 }}
               >
-                {content}
+                {post.content}
               </ReactMarkdown>
             </div>
           </div>

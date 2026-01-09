@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowRight } from 'lucide-react';
-import { blogPosts } from '@/data/blog';
+import { getBlogPosts } from '@/lib/content';
 import { useLanguage } from '@/hooks/useLanguage';
 
 const RecentBlogSection = () => {
   const { t } = useTranslation();
   const { getLocalizedPath, currentLang } = useLanguage();
   
-  const recentPosts = blogPosts.slice(0, 5);
+  const recentPosts = getBlogPosts(currentLang as 'en' | 'ko').slice(0, 5);
   
   return (
     <section className="py-24 md:py-32 bg-background">
@@ -36,10 +36,10 @@ const RecentBlogSection = () => {
               className="blog-item group"
             >
               <h3 className="text-ivory font-medium group-hover:text-accent transition-colors flex-1 min-w-0">
-                {currentLang === 'ko' ? post.titleKo : post.title}
+                {post.title}
               </h3>
               <span className="text-muted-foreground text-sm whitespace-nowrap shrink-0">
-                {currentLang === 'ko' ? post.dateKo : post.date}
+                {post.date}
               </span>
             </Link>
           ))}

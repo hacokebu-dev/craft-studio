@@ -2,7 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import Layout from '@/components/Layout';
-import { projects } from '@/data/projects';
+import { getProject } from '@/lib/content';
 import { useLanguage } from '@/hooks/useLanguage';
 
 const ProjectDetail = () => {
@@ -10,7 +10,7 @@ const ProjectDetail = () => {
   const navigate = useNavigate();
   const { currentLang } = useLanguage();
   
-  const project = projects.find((p) => p.id === id);
+  const project = getProject(id || '', currentLang as 'en' | 'ko');
   
   if (!project) {
     return (
@@ -21,10 +21,6 @@ const ProjectDetail = () => {
       </Layout>
     );
   }
-  
-  const title = currentLang === 'ko' ? project.titleKo : project.title;
-  const date = currentLang === 'ko' ? project.dateKo : project.date;
-  const content = currentLang === 'ko' ? project.contentKo : project.content;
   
   return (
     <Layout>
@@ -37,10 +33,10 @@ const ProjectDetail = () => {
               className="flex items-center gap-2 text-muted-foreground hover:text-ivory transition-colors mb-6"
             >
               <ArrowLeft className="w-4 h-4" />
-              <span className="text-sm">{date}</span>
+              <span className="text-sm">{project.date}</span>
             </button>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent leading-tight">
-              {title}
+              {project.title}
             </h1>
           </header>
           
@@ -62,7 +58,7 @@ const ProjectDetail = () => {
                 ),
               }}
             >
-              {content}
+              {project.content}
             </ReactMarkdown>
           </div>
         </div>
