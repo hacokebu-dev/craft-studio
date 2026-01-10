@@ -34,7 +34,7 @@ const LanguageSelector = () => {
                 currentLang === 'en' ? 'text-accent' : 'text-ivory'
               }`}
             >
-              EN
+              English
             </button>
             <button
               onClick={() => handleSelect('ko')}
@@ -42,7 +42,7 @@ const LanguageSelector = () => {
                 currentLang === 'ko' ? 'text-accent' : 'text-ivory'
               }`}
             >
-              KO
+              한국어
             </button>
           </div>
         </>
