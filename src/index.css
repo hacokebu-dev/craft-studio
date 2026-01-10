@@ -129,7 +129,7 @@
   }
 
   .markdown-content {
-    @apply text-ivory leading-relaxed;
+    @apply text-ivory leading-relaxed text-[1.125rem];
   }
 
   .markdown-content p {
