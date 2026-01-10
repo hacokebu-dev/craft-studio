@@ -235,3 +235,12 @@ a[href*="unicorn.studio"] {
   height: 0 !important;
   overflow: hidden !important;
 }
+
+/* Hide scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
