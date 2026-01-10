@@ -1,6 +1,6 @@
 ---
 id: digital-garden
-number: "02"
+number: "05"
 title: 디지털 가든 플랫폼 개발
 date: "2026년 3월"
 thumbnail: /assets/project-2.jpg
