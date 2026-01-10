@@ -101,7 +101,19 @@
   }
 
   .blog-item {
-    @apply flex justify-between items-start py-6 border-b border-border gap-8;
+    @apply flex justify-between items-center py-6 gap-8;
+  }
+
+  .blog-item-bordered {
+    @apply border-b border-ivory/50;
+  }
+
+  .blog-item-title {
+    @apply text-[1.5rem] font-medium text-ivory group-hover:text-accent transition-colors flex-1 min-w-0;
+  }
+
+  .blog-item-date {
+    @apply text-muted-foreground text-[1.25rem] whitespace-nowrap shrink-0;
   }
 
   .project-card {
@@ -109,11 +121,11 @@
   }
 
   .category-filter {
-    @apply px-4 py-2 text-sm border border-border rounded-full transition-colors duration-200;
+    @apply px-[1.5rem] py-[0.8rem] text-[1.25rem] transition-colors duration-200 text-ivory;
   }
 
   .category-filter-active {
-    @apply bg-ivory text-background border-ivory;
+    @apply bg-ivory text-background;
   }
 
   .markdown-content {

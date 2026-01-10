@@ -38,17 +38,17 @@ const BlogList = () => {
           </div>
           
           {/* Blog List */}
-          <div className="divide-y divide-border">
+          <div>
             {filteredPosts.map((post) => (
               <Link
                 key={post.id}
                 to={getLocalizedPath(`/blog/${post.id}`)}
-                className="blog-item group"
+                className="blog-item blog-item-bordered group"
               >
-                <h2 className="text-ivory font-medium text-lg group-hover:text-accent transition-colors flex-1 min-w-0">
+                <h2 className="blog-item-title">
                   {post.title}
                 </h2>
-                <span className="text-muted-foreground text-sm whitespace-nowrap shrink-0">
+                <span className="blog-item-date">
                   {post.date}
                 </span>
               </Link>
