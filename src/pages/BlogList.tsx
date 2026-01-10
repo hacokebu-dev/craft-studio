@@ -23,7 +23,7 @@ const BlogList = () => {
       <div className="py-12 md:py-16">
         <div className="container-main">
           {/* Category Filter */}
-          <div className="flex flex-wrap gap-3 mb-6">
+          <div className="flex gap-3 mb-6 overflow-x-auto scrollbar-hide">
             {categories.map((category) => (
               <button
                 key={category.id}
