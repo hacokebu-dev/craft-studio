@@ -28,14 +28,16 @@ const ProjectDetail = () => {
         <div className="container-main">
           {/* Header */}
           <header className="mb-12">
-            <button
-              onClick={() => navigate(-1)}
-              className="flex items-center gap-2 text-ivory hover:text-accent transition-colors mb-6"
-            >
-              <ArrowLeft className="w-[1.5rem] h-[1.5rem]" />
-            </button>
-            <span className="text-ivory text-[1.5rem]">{project.date}</span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-accent leading-tight">
+            <div className="flex items-center gap-4 mb-6">
+              <button
+                onClick={() => navigate(-1)}
+                className="flex items-center gap-2 text-ivory hover:text-accent transition-colors"
+              >
+                <ArrowLeft className="w-[1.5rem] h-[1.5rem]" />
+              </button>
+              <span className="text-ivory text-[1.5rem]">{project.date}</span>
+            </div>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-ivory !leading-[1.3]">
               {project.title}
             </h1>
           </header>
