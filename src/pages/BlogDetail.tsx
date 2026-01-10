@@ -53,7 +53,7 @@ const BlogDetail = () => {
                 <span className="text-ivory">|</span>
                 <span className="text-ivory text-[1.5rem]">{post.category}</span>
               </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-ivory leading-[1.3]">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-ivory !leading-[1.3]">
                 {post.title}
               </h1>
             </header>
