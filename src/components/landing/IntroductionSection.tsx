@@ -56,6 +56,8 @@ const IntroductionSection = () => {
             <div className="section-number shrink-0">01</div>
             <div className="flex-1 py-2">
               <p className="text-[2rem] leading-[2.8rem] text-secondary break-keep">
+                <span className="whitespace-nowrap">{t('intro.section1.name')}</span>
+                <span className="text-[1.25rem] whitespace-nowrap">{t('intro.section1.pronunciation')}</span>
                 {t('intro.section1.description')}
               </p>
             </div>
