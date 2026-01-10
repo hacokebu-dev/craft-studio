@@ -11,19 +11,19 @@ const RecentBlogSection = () => {
   const recentPosts = getBlogPosts(currentLang as 'en' | 'ko').slice(0, 5);
   
   return (
-    <section className="py-24 md:py-32 bg-background">
+    <section className="pb-24 md:pb-32 bg-background">
       <div className="container-main">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-accent">
+          <h2 className="text-[3rem] font-bold text-ivory">
             {t('recentBlog.title')}
           </h2>
           <Link
             to={getLocalizedPath('/blog')}
-            className="flex items-center gap-2 text-ivory hover:text-accent transition-colors text-sm"
+            className="flex items-center gap-2 text-ivory hover:text-accent transition-colors text-[1.5rem]"
           >
             {t('recentBlog.more')}
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-6 h-6" />
           </Link>
         </div>
         
@@ -35,10 +35,10 @@ const RecentBlogSection = () => {
               to={getLocalizedPath(`/blog/${post.id}`)}
               className="blog-item group"
             >
-              <h3 className="text-ivory font-medium group-hover:text-accent transition-colors flex-1 min-w-0">
+              <h3 className="text-[2rem] font-bold text-ivory group-hover:text-accent transition-colors flex-1 min-w-0">
                 {post.title}
               </h3>
-              <span className="text-muted-foreground text-sm whitespace-nowrap shrink-0">
+              <span className="text-muted-foreground text-[1.25rem] whitespace-nowrap shrink-0">
                 {post.date}
               </span>
             </Link>

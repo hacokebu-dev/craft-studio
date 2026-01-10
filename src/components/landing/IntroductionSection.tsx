@@ -16,8 +16,35 @@ const IntroductionSection = () => {
   const handleCopyEmail = async () => {
     await navigator.clipboard.writeText(email);
     toast({
-      description: "주소가 복사됐어요",
+      description: t('intro.section3.emailCopied'),
     });
+  };
+
+  const renderEmailText = () => {
+    const text = t('intro.section3.description2');
+    const parts = text.split('{email}');
+    
+    return (
+      <>
+        {parts[0]}
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <button 
+                onClick={handleCopyEmail}
+                className="underline underline-offset-4 hover:text-ivory transition-colors cursor-pointer"
+              >
+                {email}
+              </button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{t('intro.section3.emailTooltip')}</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+        {parts[1]}
+      </>
+    );
   };
   
   return (
@@ -58,22 +85,7 @@ const IntroductionSection = () => {
                 {t('intro.section3.description1')}
               </p>
               <p className="text-[2rem] leading-[2.8rem] text-secondary break-keep">
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <button 
-                        onClick={handleCopyEmail}
-                        className="underline underline-offset-4 hover:text-ivory transition-colors cursor-pointer"
-                      >
-                        {email}
-                      </button>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>클릭하면 주소를 복사할 수 있어요</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-                으로 메일 보내 주시면 평일 기준 3일 이내에 회신드립니다.
+                {renderEmailText()}
               </p>
               <p className="text-[2rem] leading-[2.8rem] text-secondary break-keep">
                 {t('intro.section3.description3')}

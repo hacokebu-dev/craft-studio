@@ -18,10 +18,12 @@
     },
     "section3": {
       "description1": "We welcome various forms of collaboration including side projects, campaigns, and interviews.",
-      "description2": "If you send an email to hacokebu@gmail.com, we will respond within 3 business days.",
+      "description2": "If you send an email to {email}, we will respond within 3 business days.",
       "description3": "For project requests, please click the button below to fill out the form. We recommend this for faster and more accurate responses.",
       "note": "For price comparisons, please include your request, estimated budget or 1% of project value, or minimum expected quality standards. We will not respond to inquiries without these details.",
-      "button": "Request a Project"
+      "button": "Request a Project",
+      "emailTooltip": "Click to copy the address",
+      "emailCopied": "Address copied!"
     }
   },
   "recentProjects": {
