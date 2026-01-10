@@ -45,15 +45,15 @@ const BlogDetail = () => {
               <div className="flex items-center gap-4 mb-6">
                 <button
                   onClick={() => navigate(-1)}
-                  className="flex items-center gap-2 text-muted-foreground hover:text-ivory transition-colors"
+                  className="flex items-center gap-2 text-ivory hover:text-accent transition-colors"
                 >
-                  <ArrowLeft className="w-4 h-4" />
+                  <ArrowLeft className="w-[1.5rem] h-[1.5rem]" />
                 </button>
-                <span className="text-accent text-sm">{post.date}</span>
-                <span className="text-muted-foreground">|</span>
-                <span className="text-accent text-sm">{post.category}</span>
+                <span className="text-ivory text-[1.5rem]">{post.date}</span>
+                <span className="text-ivory">|</span>
+                <span className="text-ivory text-[1.5rem]">{post.category}</span>
               </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-ivory leading-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-ivory leading-[1.3]">
                 {post.title}
               </h1>
             </header>
