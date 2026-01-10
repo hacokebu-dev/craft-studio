@@ -32,7 +32,7 @@ const ProjectList = () => {
                   />
                 </div>
                 <div className="flex items-center gap-6">
-                  <span className="text-[6rem] font-extrabold text-ivory">
+                  <span className="hidden md:block text-[6rem] font-extrabold text-ivory">
                     {project.number}
                   </span>
                   <div>
