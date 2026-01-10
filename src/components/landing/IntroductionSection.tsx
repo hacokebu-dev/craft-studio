@@ -55,10 +55,8 @@ const IntroductionSection = () => {
           <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
             <div className="section-number shrink-0">01</div>
             <div className="flex-1 py-2">
-              <p className="text-[2rem] leading-[2.8rem] text-ivory break-keep">
-                <span className="font-bold text-ivory">{t('intro.section1.title')}</span>
-                <span className="text-muted-foreground text-sm ml-1">{t('intro.section1.pronunciation')}</span>
-                <span className="text-secondary pt-[2rem] block">{t('intro.section1.description')}</span>
+              <p className="text-[2rem] leading-[2.8rem] text-secondary break-keep">
+                {t('intro.section1.description')}
               </p>
             </div>
           </div>
