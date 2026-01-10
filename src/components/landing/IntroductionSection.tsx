@@ -54,7 +54,7 @@ const IntroductionSection = () => {
         <div className="py-[5rem]">
           <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
             <div className="section-number shrink-0">01</div>
-            <div className="flex-1">
+            <div className="flex-1 py-2">
               <p className="text-[2rem] leading-[2.8rem] text-ivory break-keep">
                 <span className="font-bold text-ivory">{t('intro.section1.title')}</span>
                 <span className="text-muted-foreground text-sm ml-1">{t('intro.section1.pronunciation')}</span>
@@ -68,7 +68,7 @@ const IntroductionSection = () => {
         <div className="border-t border-ivory/50 py-[5rem]">
           <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
             <div className="section-number shrink-0">02</div>
-            <div className="flex-1">
+            <div className="flex-1 py-2">
               <p className="text-[2rem] leading-[2.8rem] text-secondary break-keep">
                 {t('intro.section2.description')}
               </p>
@@ -80,7 +80,7 @@ const IntroductionSection = () => {
         <div className="border-t border-ivory/50 py-[5rem]">
           <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
           <div className="section-number shrink-0">03</div>
-            <div className="flex-1 space-y-4">
+            <div className="flex-1 py-2 space-y-4">
               <p className="text-[2rem] leading-[2.8rem] text-secondary break-keep">
                 {t('intro.section3.description1')}
               </p>
