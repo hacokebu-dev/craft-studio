@@ -11,19 +11,19 @@ const RecentProjectsSection = () => {
   const recentProjects = getProjects(currentLang as 'en' | 'ko').slice(0, 6);
   
   return (
-    <section className="py-24 md:py-32 bg-background">
+    <section className="py-[5rem] bg-background">
       <div className="container-main">
         {/* Header */}
         <div className="flex items-center justify-between mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-accent">
+          <h2 className="text-[3rem] font-bold text-ivory">
             {t('recentProjects.title')}
           </h2>
           <Link
             to={getLocalizedPath('/project')}
-            className="flex items-center gap-2 text-ivory hover:text-accent transition-colors text-sm"
+            className="flex items-center gap-2 text-ivory hover:text-accent transition-colors text-[1.5rem]"
           >
             {t('recentProjects.more')}
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-6 h-6" />
           </Link>
         </div>
         
@@ -36,7 +36,7 @@ const RecentProjectsSection = () => {
               className="project-card group"
             >
               <div 
-                className="w-full bg-muted mb-4"
+                className="w-full bg-muted"
                 style={{ aspectRatio: '16 / 10' }}
               >
                 <img
@@ -44,19 +44,6 @@ const RecentProjectsSection = () => {
                   alt={project.title}
                   className="w-full h-full object-cover"
                 />
-              </div>
-              <div className="flex items-start gap-4">
-                <span className="text-3xl md:text-4xl font-bold text-accent">
-                  {project.number}
-                </span>
-                <div>
-                  <h3 className="text-ivory font-medium group-hover:text-accent transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm mt-1">
-                    {project.date}
-                  </p>
-                </div>
               </div>
             </Link>
           ))}

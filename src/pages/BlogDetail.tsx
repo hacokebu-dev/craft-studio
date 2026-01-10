@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
+import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/Layout';
 import { getBlogPost } from '@/lib/content';
 import { useLanguage } from '@/hooks/useLanguage';
@@ -24,6 +25,17 @@ const BlogDetail = () => {
   
   return (
     <Layout>
+      <Helmet>
+        <title>{post.title} | HACO & KEBU Blog</title>
+        <meta name="description" content={post.content.substring(0, 155).replace(/[#*_\n]/g, '')} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.content.substring(0, 155).replace(/[#*_\n]/g, '')} />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.content.substring(0, 155).replace(/[#*_\n]/g, '')} />
+        <link rel="canonical" href={`https://hacokebu.com/${currentLang === 'ko' ? 'ko/' : ''}blog/${id}`} />
+      </Helmet>
       <article className="py-12 md:py-16">
         <div className="container-main">
           {/* Centered Content Container */}
