@@ -33,9 +33,9 @@ const RecentBlogSection = () => {
             <Link
               key={post.id}
               to={getLocalizedPath(`/blog/${post.id}`)}
-              className="blog-item group"
+              className="blog-item group items-center"
             >
-              <h3 className="text-[2rem] font-medium text-ivory group-hover:text-accent transition-colors flex-1 min-w-0">
+              <h3 className="text-[1.5rem] font-medium text-ivory group-hover:text-accent transition-colors flex-1 min-w-0">
                 {post.title}
               </h3>
               <span className="text-muted-foreground text-[1.25rem] whitespace-nowrap shrink-0">
