@@ -64,7 +64,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-background border-t border-border">
-          <div className="container-main py-4 flex flex-col gap-4">
+          <div className="container-main py-4 flex flex-col gap-4 items-center text-center">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -77,7 +77,7 @@ const Navbar = () => {
                 {item.label}
               </Link>
             ))}
-            <div className="pt-4 border-t border-border">
+            <div className="pt-4 border-t border-border w-full flex justify-center">
               <LanguageSelector />
             </div>
           </div>
