@@ -31,15 +31,15 @@ const ProjectList = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="flex items-start gap-6">
-                  <span className="text-4xl md:text-5xl font-bold text-accent">
+                <div className="flex items-center gap-6">
+                  <span className="text-[6rem] font-extrabold text-ivory">
                     {project.number}
                   </span>
                   <div>
-                    <h2 className="text-xl md:text-2xl text-ivory font-medium group-hover:text-accent transition-colors">
+                    <h2 className="text-[2rem] text-ivory font-medium group-hover:text-accent transition-colors">
                       {project.title}
                     </h2>
-                    <p className="text-muted-foreground text-sm mt-2">
+                    <p className="text-muted-foreground text-[1.2rem] mt-2">
                       {project.date}
                     </p>
                   </div>
