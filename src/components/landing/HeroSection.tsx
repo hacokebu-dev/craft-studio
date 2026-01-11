@@ -60,7 +60,7 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-8 -mt-[2.5rem]">
         <h1 
-          className="text-[5rem] font-extrabold text-ivory max-w-4xl whitespace-pre-line"
+          className="text-[6rem] font-extrabold text-ivory max-w-4xl whitespace-pre-line"
           style={{ lineHeight: '1.3' }}
         >
           {t('hero.title')}
