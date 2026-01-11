@@ -11,28 +11,28 @@
     "section1": {
       "name": "HACO & KEBU",
       "pronunciation": "[ha.ko æn ke.bu]",
-      "description": " stands for Have Conviction and Keep Building — and that’s exactly what we do. We stay focused and keep creating."
+      "description": " is an abbreviation of 'Have Conviction and Keep Building'. We keep building without wavering."
     },
     "section2": {
-      "description": "We’re currently a solo studio, and we plan to stay small. This gives us the freedom to work on projects that align with our scale and values."
+      "description": "Currently, we are a team of one. We will maintain a small size going forward, and engage in activities that allow a small group to have almost limitless freedom."
     },
     "section3": {
-      "description1": "We’re open to collaborations, including side projects, campaigns, and interviews.",
-      "description2": "Reach out at {email}, and we’ll respond within three business days.",
-      "description3": "For project inquiries, we recommend using the form below — it helps us respond faster and more accurately.",
-      "note": "Please note that we do not respond to price comparison inquiries, competitive bidding proposals, or one-sentence messages.",
-      "button": "Request a Project",
+      "description1": "We welcome various forms of collaboration including side projects, campaigns, and interviews.",
+      "description2": "If you send an email to {email}, we will respond within 3 business days.",
+      "description3": "For project requests, please click the button below to fill out the form. We recommend this for faster and more accurate responses.",
+      "note": "For price comparisons, please include your request, estimated budget or 1% of project value, or minimum expected quality standards. We will not respond to inquiries without these details.",
+      "button": "Start a Project",
       "emailTooltip": "Click to copy the address",
-      "emailCopied": "Address copied!"
+      "emailCopied": "Email address copied!"
     }
   },
   "recentProjects": {
-    "title": "Latest Projects",
-    "more": "See more"
+    "title": "Recent Projects",
+    "more": "More"
   },
   "recentBlog": {
-    "title": "Latest Posts",
-    "more": "See more"
+    "title": "Recent Posts",
+    "more": "More"
   },
   "footer": {
     "copyright": "© 2026 HACO & KEBU. All rights reserved.",
