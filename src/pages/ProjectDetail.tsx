@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
+import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/Layout';
 import { getProject } from '@/lib/content';
 import { useLanguage } from '@/hooks/useLanguage';
@@ -21,9 +22,25 @@ const ProjectDetail = () => {
       </Layout>
     );
   }
+
+  const metaDescription = project.description || project.content.substring(0, 155).replace(/[#*_\n]/g, '');
+  const ogImage = project.ogImage || project.thumbnail;
   
   return (
     <Layout>
+      <Helmet>
+        <title>{project.title} | HACO & KEBU Projects</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={project.title} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:type" content="article" />
+        {ogImage && <meta property="og:image" content={ogImage} />}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={project.title} />
+        <meta name="twitter:description" content={metaDescription} />
+        {ogImage && <meta name="twitter:image" content={ogImage} />}
+        <link rel="canonical" href={`https://hacokebu.com/${currentLang === 'ko' ? 'ko/' : ''}project/${id}`} />
+      </Helmet>
       <article className="py-12 md:py-16">
         <div className="container-main">
           {/* Header */}
