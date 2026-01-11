@@ -6,9 +6,17 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { useToast } from '@/hooks/use-toast';
+import { useLanguage } from '@/hooks/useLanguage';
+
+// 언어별 프로젝트 의뢰 버튼 URL 설정
+const PROJECT_REQUEST_URLS = {
+  en: 'https://www.google.com/',
+  ko: 'https://www.naver.com/',
+};
 
 const IntroductionSection = () => {
   const { t } = useTranslation();
+  const { currentLang } = useLanguage();
   const { toast } = useToast();
   
   const email = 'hacokebu@gmail.com';
@@ -95,7 +103,7 @@ const IntroductionSection = () => {
               </p>
               <div className="pt-4">
                 <a
-                  href="https://www.naver.com/"
+                  href={PROJECT_REQUEST_URLS[currentLang]}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary"
