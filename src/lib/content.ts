@@ -3,6 +3,8 @@ export interface BlogPost {
   title: string;
   date: string;
   category: string;
+  description?: string;
+  ogImage?: string;
   content: string;
 }
 
@@ -12,6 +14,8 @@ export interface Project {
   title: string;
   date: string;
   thumbnail: string;
+  description?: string;
+  ogImage?: string;
   content: string;
 }
 
@@ -62,6 +66,8 @@ function parseBlogPost(rawContent: string): BlogPost {
     title: data.title || '',
     date: data.date || '',
     category: data.category || '',
+    description: data.description,
+    ogImage: data.ogImage,
     content: content,
   };
 }
@@ -74,6 +80,8 @@ function parseProject(rawContent: string): Project {
     title: data.title || '',
     date: data.date || '',
     thumbnail: data.thumbnail || '',
+    description: data.description,
+    ogImage: data.ogImage,
     content: content,
   };
 }
