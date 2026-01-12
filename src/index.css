@@ -148,12 +148,28 @@
     @apply text-xl font-bold mb-3 mt-4;
   }
 
-  .markdown-content ul, .markdown-content ol {
-    @apply mb-4 pl-6;
+  /* Lists with bullets and numbers */
+  .markdown-content ul {
+    @apply mb-4 pl-6 list-disc;
+  }
+
+  .markdown-content ol {
+    @apply mb-4 pl-6 list-decimal;
   }
 
   .markdown-content li {
     @apply mb-2;
+  }
+
+  /* Nested lists */
+  .markdown-content ul ul,
+  .markdown-content ol ul {
+    @apply list-[circle] mt-2;
+  }
+
+  .markdown-content ul ul ul,
+  .markdown-content ol ul ul {
+    @apply list-[square];
   }
 
   .markdown-content blockquote {
@@ -166,6 +182,61 @@
 
   .markdown-content a {
     @apply text-accent underline;
+  }
+
+  /* Underline support */
+  .markdown-content u {
+    @apply underline decoration-accent underline-offset-2;
+  }
+
+  /* Code inline */
+  .markdown-content code:not(pre code) {
+    @apply bg-muted px-1.5 py-0.5 rounded text-[0.9em] font-mono text-accent;
+  }
+
+  /* Code blocks */
+  .markdown-content pre {
+    @apply bg-muted p-4 rounded-lg overflow-x-auto my-6 border border-border;
+  }
+
+  .markdown-content pre code {
+    @apply text-[0.9em] font-mono text-ivory leading-relaxed;
+  }
+
+  /* Tables */
+  .markdown-content table {
+    @apply w-full my-6 border-collapse;
+  }
+
+  .markdown-content th {
+    @apply bg-muted px-4 py-2 text-left font-bold border border-border;
+  }
+
+  .markdown-content td {
+    @apply px-4 py-2 border border-border;
+  }
+
+  .markdown-content tr:hover {
+    @apply bg-muted/50;
+  }
+
+  /* Checkboxes (task lists) */
+  .markdown-content input[type="checkbox"] {
+    @apply mr-2 w-4 h-4 accent-accent;
+  }
+
+  .markdown-content li:has(input[type="checkbox"]) {
+    @apply list-none -ml-6;
+  }
+
+  /* Strikethrough */
+  .markdown-content del {
+    @apply text-muted-foreground;
+  }
+
+  /* Horizontal rule */
+  .markdown-content hr {
+    @apply my-8 border-border;
   }
 }
 

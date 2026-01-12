@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/Layout';
 import { getBlogPost } from '@/lib/content';
@@ -63,6 +64,7 @@ const BlogDetail = () => {
             {/* Content */}
             <div className="markdown-content">
               <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
                 components={{
                   img: ({ src, alt }) => (
                     <div 
