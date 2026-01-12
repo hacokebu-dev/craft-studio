@@ -222,11 +222,21 @@
 
   /* Checkboxes (task lists) */
   .markdown-content input[type="checkbox"] {
-    @apply mr-2 w-4 h-4 accent-accent;
+    @apply mr-2 w-4 h-4 accent-accent cursor-pointer;
   }
 
   .markdown-content li:has(input[type="checkbox"]) {
-    @apply list-none -ml-6;
+    @apply list-none -ml-6 transition-colors duration-200;
+  }
+
+  /* Uncompleted task - ivory color */
+  .markdown-content li:has(input[type="checkbox"]:not(:checked)) {
+    @apply text-ivory;
+  }
+
+  /* Completed task - muted color with line-through */
+  .markdown-content li:has(input[type="checkbox"]:checked) {
+    @apply text-muted-foreground line-through;
   }
 
   /* Strikethrough */
