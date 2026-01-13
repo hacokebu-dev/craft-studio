@@ -6,7 +6,7 @@ const Logo = () => {
   const { getLocalizedPath } = useLanguage();
   
   return (
-    <Link to={getLocalizedPath('/')} className="flex items-center w-[120px] h-[2.4rem]">
+    <Link to={getLocalizedPath('/')} className="flex items-center min-w-[180px] h-[2.4rem]">
       <img 
         src={logoSvg} 
         alt="HACO & KEBU" 
