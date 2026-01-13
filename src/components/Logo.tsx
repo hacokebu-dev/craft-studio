@@ -7,7 +7,7 @@ const Logo = () => {
   
   return (
     <Link to={getLocalizedPath('/')} className="flex items-center">
-      <img src={logoSvg} alt="HACO & KEBU" className="h-8" />
+      <img src={logoSvg} alt="HACO & KEBU" className="h-[2.4rem]" />
     </Link>
   );
 };
