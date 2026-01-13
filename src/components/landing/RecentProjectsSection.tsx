@@ -43,6 +43,8 @@ const RecentProjectsSection = () => {
                   src={project.thumbnail}
                   alt={project.title}
                   loading="lazy"
+                  width={640}
+                  height={400}
                   className="w-full h-full object-cover"
                 />
               </div>

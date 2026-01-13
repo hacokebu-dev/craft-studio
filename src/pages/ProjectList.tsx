@@ -29,6 +29,8 @@ const ProjectList = () => {
                     src={project.thumbnail}
                     alt={project.title}
                     loading="lazy"
+                    width={1280}
+                    height={800}
                     className="w-full h-full object-cover"
                   />
                 </div>
