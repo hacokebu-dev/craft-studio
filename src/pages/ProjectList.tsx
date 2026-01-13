@@ -28,6 +28,7 @@ const ProjectList = () => {
                   <img
                     src={project.thumbnail}
                     alt={project.title}
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                 </div>

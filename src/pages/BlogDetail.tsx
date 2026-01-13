@@ -49,6 +49,7 @@ const BlogDetail = () => {
                 <button
                   onClick={() => navigate(-1)}
                   className="flex items-center gap-2 text-ivory hover:text-accent transition-colors"
+                  aria-label="Go back"
                 >
                   <ArrowLeft className="w-[1.5rem] h-[1.5rem]" />
                 </button>
@@ -74,6 +75,7 @@ const BlogDetail = () => {
                       <img
                         src={src}
                         alt={alt || ''}
+                        loading="lazy"
                         className="w-full h-full object-cover"
                       />
                     </div>
