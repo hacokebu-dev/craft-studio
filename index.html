@@ -25,13 +25,43 @@
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://hacokebu.com/og-image.jpg" />
-
-    <meta name="twitter:card" content="summary_large_image" />
     
     <!-- Font preload for performance -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preload" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.woff2" as="font" type="font/woff2" crossorigin>
     <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://hacokebu.com/#organization",
+            "name": "HACO & KEBU",
+            "url": "https://hacokebu.com",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://hacokebu.com/icon-512.png"
+            },
+            "image": "https://hacokebu.com/og-image.jpg",
+            "description": "Crafting small digital tools and toys. We believe in maintaining quality while staying small and agile."
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://hacokebu.com/#website",
+            "url": "https://hacokebu.com",
+            "name": "HACO & KEBU",
+            "description": "Crafting small digital tools and toys",
+            "publisher": {
+              "@id": "https://hacokebu.com/#organization"
+            },
+            "inLanguage": ["en", "ko"]
+          }
+        ]
+      }
+    </script>
   </head>
 
   <body>

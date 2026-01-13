@@ -24,20 +24,53 @@ const BlogDetail = () => {
     );
   }
   
+  const metaDescription = post.description || post.content.substring(0, 155).replace(/[#*_\n]/g, '');
+  const canonicalUrl = `https://hacokebu.com/${currentLang === 'ko' ? 'ko/' : ''}blog/${id}`;
+  
+  const blogPostingSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": metaDescription,
+    "datePublished": post.date,
+    "author": {
+      "@type": "Organization",
+      "name": "HACO & KEBU",
+      "url": "https://hacokebu.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HACO & KEBU",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://hacokebu.com/icon-512.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalUrl
+    },
+    "inLanguage": currentLang,
+    ...(post.ogImage && { "image": post.ogImage })
+  };
+  
   return (
     <Layout>
       <Helmet>
         <title>{post.title} | HACO & KEBU Blog</title>
-        <meta name="description" content={post.description || post.content.substring(0, 155).replace(/[#*_\n]/g, '')} />
+        <meta name="description" content={metaDescription} />
         <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.description || post.content.substring(0, 155).replace(/[#*_\n]/g, '')} />
+        <meta property="og:description" content={metaDescription} />
         <meta property="og:type" content="article" />
         {post.ogImage && <meta property="og:image" content={post.ogImage} />}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={post.title} />
-        <meta name="twitter:description" content={post.description || post.content.substring(0, 155).replace(/[#*_\n]/g, '')} />
+        <meta name="twitter:description" content={metaDescription} />
         {post.ogImage && <meta name="twitter:image" content={post.ogImage} />}
-        <link rel="canonical" href={`https://hacokebu.com/${currentLang === 'ko' ? 'ko/' : ''}blog/${id}`} />
+        <link rel="canonical" href={canonicalUrl} />
+        <script type="application/ld+json">
+          {JSON.stringify(blogPostingSchema)}
+        </script>
       </Helmet>
       <article className="py-12 md:py-16">
         <div className="container-main">
