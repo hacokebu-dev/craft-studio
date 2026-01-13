@@ -25,6 +25,26 @@ const ProjectDetail = () => {
 
   const metaDescription = project.description || project.content.substring(0, 155).replace(/[#*_\n]/g, '');
   const ogImage = project.ogImage || project.thumbnail;
+  const canonicalUrl = `https://hacokebu.com/${currentLang === 'ko' ? 'ko/' : ''}project/${id}`;
+  
+  const creativeWorkSchema = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": project.title,
+    "description": metaDescription,
+    "datePublished": project.date,
+    "creator": {
+      "@type": "Organization",
+      "name": "HACO & KEBU",
+      "url": "https://hacokebu.com"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalUrl
+    },
+    "inLanguage": currentLang,
+    ...(ogImage && { "image": ogImage })
+  };
   
   return (
     <Layout>
@@ -39,7 +59,10 @@ const ProjectDetail = () => {
         <meta name="twitter:title" content={project.title} />
         <meta name="twitter:description" content={metaDescription} />
         {ogImage && <meta name="twitter:image" content={ogImage} />}
-        <link rel="canonical" href={`https://hacokebu.com/${currentLang === 'ko' ? 'ko/' : ''}project/${id}`} />
+        <link rel="canonical" href={canonicalUrl} />
+        <script type="application/ld+json">
+          {JSON.stringify(creativeWorkSchema)}
+        </script>
       </Helmet>
       <article className="py-12 md:py-16">
         <div className="container-main">
