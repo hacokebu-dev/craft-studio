@@ -10,17 +10,17 @@ import { useLanguage } from '@/hooks/useLanguage';
 
 // 언어별 프로젝트 의뢰 버튼 URL 설정
 const PROJECT_REQUEST_URLS = {
-  en: 'https://www.google.com/',
-  ko: 'https://www.naver.com/',
+  en: 'https://docs.google.com/forms/d/e/1FAIpQLSesn46HUEYyT5UZWj-K5EugoBhY1lNq8eg9qj3zgay-EK7Mfg/viewform',
+  ko: 'https://docs.google.com/forms/d/e/1FAIpQLSdNsyQI5M_c5Vl7QpsVQRS8OswDWJkj6ihrQIQkXzSzIDk1Lg/viewform',
 };
 
 const IntroductionSection = () => {
   const { t } = useTranslation();
   const { currentLang } = useLanguage();
   const { toast } = useToast();
-  
+
   const email = 'hacokebu@gmail.com';
-  
+
   const handleCopyEmail = async () => {
     await navigator.clipboard.writeText(email);
     toast({
@@ -31,14 +31,14 @@ const IntroductionSection = () => {
   const renderEmailText = () => {
     const text = t('intro.section3.description2');
     const parts = text.split('{email}');
-    
+
     return (
       <>
         {parts[0]}
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
-              <button 
+              <button
                 onClick={handleCopyEmail}
                 className="underline underline-offset-4 hover:text-ivory transition-colors cursor-pointer"
               >
@@ -54,7 +54,7 @@ const IntroductionSection = () => {
       </>
     );
   };
-  
+
   return (
     <section className="bg-background relative z-20" style={{ marginTop: '-72px' }}>
       <div className="container-main">
@@ -71,7 +71,7 @@ const IntroductionSection = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Section 02 */}
         <div className="border-t border-ivory/50 py-[5rem]">
           <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
@@ -83,11 +83,11 @@ const IntroductionSection = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Section 03 */}
         <div className="border-t border-ivory/50 py-[5rem]">
           <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
-          <div className="section-number shrink-0">03</div>
+            <div className="section-number shrink-0">03</div>
             <div className="flex-1 py-2 space-y-4">
               <p className="text-[2rem] leading-[2.8rem] text-secondary break-keep">
                 {t('intro.section3.description1')}
