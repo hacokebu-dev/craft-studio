@@ -248,6 +248,22 @@
   .markdown-content hr {
     @apply my-8 border-border;
   }
+
+  /* Seamless image group - 이미지 조각들을 간격 없이 붙임 */
+  .markdown-content figure.seamless,
+  .markdown-content div.seamless {
+    @apply my-8;
+  }
+
+  .markdown-content figure.seamless img,
+  .markdown-content div.seamless img {
+    @apply my-0 block;
+  }
+
+  /* seamless 내부 p 태그 여백 제거 */
+  .markdown-content div.seamless p {
+    @apply mb-0;
+  }
 }
 
 @layer utilities {
