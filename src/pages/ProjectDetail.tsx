@@ -1,6 +1,8 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/Layout';
 import { getProject } from '@/lib/content';
@@ -86,6 +88,8 @@ const ProjectDetail = () => {
           {/* Content */}
           <div className="markdown-content">
             <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              rehypePlugins={[rehypeRaw]}
               components={{
                 img: ({ src, alt }) => (
                   <div 
