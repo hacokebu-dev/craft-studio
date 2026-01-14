@@ -15,15 +15,15 @@ const RecentProjectsSection = () => {
       <div className="container-main">
         {/* Header */}
         <div className="flex items-center justify-between mb-12">
-          <h2 className="text-[3rem] font-bold text-ivory">
+          <h2 className="text-[2rem] md:text-[3rem] font-bold text-ivory">
             {t('recentProjects.title')}
           </h2>
           <Link
             to={getLocalizedPath('/project')}
-            className="flex items-center gap-2 text-ivory hover:text-accent transition-colors text-[1.5rem]"
+            className="flex items-center gap-2 text-ivory hover:text-accent transition-colors text-[1rem] md:text-[1.5rem]"
           >
             {t('recentProjects.more')}
-            <ArrowRight className="w-6 h-6" />
+            <ArrowRight className="w-4 h-4 md:w-6 md:h-6" />
           </Link>
         </div>
         
