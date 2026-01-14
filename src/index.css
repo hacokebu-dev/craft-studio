@@ -260,6 +260,12 @@
     @apply my-0 block;
   }
 
+  /* ReactMarkdown 커스텀 img 컴포넌트의 wrapper div 처리 */
+  .markdown-content figure.seamless > div,
+  .markdown-content div.seamless > div {
+    @apply !my-0;
+  }
+
   /* seamless 내부 p 태그 여백 제거 */
   .markdown-content div.seamless p {
     @apply mb-0;
