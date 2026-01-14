@@ -21,7 +21,7 @@ Here's another view of the project:
 This shows the minimalist design approach we took for the interface.
 
 <figure class="seamless">
-<img src="/assets/project-1" alt="조각 1" />
-<img src="/assets/project-1" alt="조각 2" />
-<img src="/assets/project-1" alt="조각 3" />
+<img src="/assets/project-1.jpg" alt="조각 1" />
+<img src="/assets/project-1.jpg" alt="조각 2" />
+<img src="/assets/project-1.jpg" alt="조각 3" />
 </figure>
