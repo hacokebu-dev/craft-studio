@@ -61,8 +61,7 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 text-center px-8 -mt-[2.5rem]">
         <h1 
-          className="text-[6rem] font-extrabold text-ivory max-w-4xl whitespace-pre-line"
-          style={{ lineHeight: '1.3' }}
+          className="text-[5rem] md:text-[6rem] font-extrabold text-ivory max-w-4xl whitespace-pre-line leading-[1.2] md:leading-[1.3]"
         >
           {t('hero.title')}
         </h1>
