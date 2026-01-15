@@ -40,40 +40,42 @@ const Navbar = () => {
   ];
   
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
-      <div className="container-main">
-        <div className={`flex items-center justify-between transition-all duration-300 ${isScrolled ? 'h-[60px]' : 'h-[100px]'}`}>
-          <Logo />
-          
-          {/* Desktop Navigation */}
-          {navItems.map((item) => (
-            <Link
-              key={item.path}
-              to={getLocalizedPath(item.path)}
-              className={`hidden md:block text-[1.25rem] transition-colors ${
-                isActive(item.path) ? 'text-accent font-extrabold' : 'text-ivory font-medium hover:text-accent'
-              }`}
+    <>
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
+        <div className="container-main">
+          <div className={`flex items-center justify-between transition-all duration-300 ${isScrolled ? 'h-[60px]' : 'h-[100px]'}`}>
+            <Logo />
+            
+            {/* Desktop Navigation */}
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                to={getLocalizedPath(item.path)}
+                className={`hidden md:block text-[1.25rem] transition-colors ${
+                  isActive(item.path) ? 'text-accent font-extrabold' : 'text-ivory font-medium hover:text-accent'
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <div className="hidden md:block">
+              <LanguageSelector />
+            </div>
+            
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden text-ivory"
+              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMobileMenuOpen}
             >
-              {item.label}
-            </Link>
-          ))}
-          <div className="hidden md:block">
-            <LanguageSelector />
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
-          
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-ivory"
-            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={isMobileMenuOpen}
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </div>
-      </div>
+      </nav>
       
-      {/* Mobile Menu */}
+      {/* Mobile Menu - nav 외부로 이동 */}
       {isMobileMenuOpen && (
         <>
           {/* Backdrop - 클릭 시 메뉴 닫기 */}
@@ -83,7 +85,7 @@ const Navbar = () => {
             aria-hidden="true"
           />
           
-          <div className="md:hidden bg-background border-t border-border relative z-50">
+          <div className={`md:hidden fixed left-0 right-0 bg-background border-t border-border z-50 ${isScrolled ? 'top-[60px]' : 'top-[100px]'}`}>
             <div className="container-main py-4 flex flex-col gap-4 items-center text-center">
               {navItems.map((item) => (
                 <Link
@@ -104,7 +106,7 @@ const Navbar = () => {
           </div>
         </>
       )}
-    </nav>
+    </>
   );
 };
 
