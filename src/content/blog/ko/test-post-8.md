@@ -1,7 +1,7 @@
 ---
 id: test-post-8
 title: "상태 관리 패턴"
-date: Nov 20, 2024
+date: 25년 1월 9일
 category: Category1
 ---
 

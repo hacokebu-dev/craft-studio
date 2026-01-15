@@ -2,7 +2,7 @@
 id: test-project-5
 number: "08"
 title: 학습 관리 시스템
-date: "2025.08"
+date: "2025년 8월"
 thumbnail: /assets/project-2.jpg
 ---
 

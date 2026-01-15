@@ -2,7 +2,7 @@
 id: test-project-8
 number: "11"
 title: 여행 계획 플랫폼
-date: "2025.05"
+date: "2025년 3월"
 thumbnail: /assets/project-2.jpg
 ---
 

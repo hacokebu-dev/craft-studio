@@ -1,7 +1,7 @@
 ---
 id: test-post-9
 title: "API 설계 원칙"
-date: Nov 15, 2024
+date: 25년 1월 9일
 category: Category1
 ---
 

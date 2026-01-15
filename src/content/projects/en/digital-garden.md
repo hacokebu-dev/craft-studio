@@ -2,7 +2,7 @@
 id: digital-garden
 number: "02"
 title: Digital Garden Platform Development
-date: "2026.03"
+date: "Jan 2025"
 thumbnail: /assets/project-2.jpg
 ---
 

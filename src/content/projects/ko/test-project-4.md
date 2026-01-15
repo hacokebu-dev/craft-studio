@@ -2,7 +2,7 @@
 id: test-project-4
 number: "07"
 title: 소셜 미디어 분석 도구
-date: "2025.09"
+date: "2025년 8월"
 thumbnail: /assets/project-1.jpg
 ---
 

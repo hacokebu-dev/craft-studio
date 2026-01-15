@@ -2,7 +2,7 @@
 id: test-project-2
 number: "05"
 title: Mobile Banking App
-date: "2025.11"
+date: "Jan 2025"
 thumbnail: /assets/project-2.jpg
 ---
 

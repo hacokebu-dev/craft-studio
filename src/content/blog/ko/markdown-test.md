@@ -1,7 +1,7 @@
 ---
 id: markdown-test
 title: "마크다운 테스트"
-date: "2026년 1월 12일"
+date: "26년 1월 12일"
 category: "category1"
 description: "마크다운 기능을 테스트하기 위한 글입니다."
 ---

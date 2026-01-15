@@ -2,7 +2,7 @@
 id: test-project-8
 number: "11"
 title: Travel Planning Platform
-date: "2025.05"
+date: "Jan 2025"
 thumbnail: /assets/project-2.jpg
 ---
 

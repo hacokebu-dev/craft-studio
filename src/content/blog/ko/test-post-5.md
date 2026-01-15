@@ -1,7 +1,7 @@
 ---
 id: test-post-5
 title: "사용자 경험의 예술"
-date: Dec 10, 2024
+date: 25년 1월 9일
 category: Category2
 ---
 

@@ -2,7 +2,7 @@
 id: minimalist-timer
 number: "01"
 title: Minimalist Timer App Design
-date: "2026.01"
+date: "Jan 2025"
 thumbnail: /assets/project-3.jpg
 ---
 

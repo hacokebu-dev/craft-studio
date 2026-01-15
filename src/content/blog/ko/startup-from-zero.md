@@ -1,7 +1,7 @@
 ---
 id: startup-from-zero
 title: 준비 Zero로 시작한 초라한 창업
-date: 2025년 1월 9일
+date: 25년 1월 9일
 category: 카테고리1
 ---
 

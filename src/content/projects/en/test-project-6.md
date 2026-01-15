@@ -2,7 +2,7 @@
 id: test-project-6
 number: "09"
 title: Restaurant Booking System
-date: "2025.07"
+date: "Jan 2025"
 thumbnail: /assets/project-3.jpg
 ---
 

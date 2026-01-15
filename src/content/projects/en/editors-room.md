@@ -2,7 +2,7 @@
 id: editors-room
 number: "03"
 title: "Publishing Editor Community 'Editors Room' Website Development"
-date: "2026.05"
+date: "Jan 2025"
 thumbnail: /assets/project-1.jpg
 ---
 

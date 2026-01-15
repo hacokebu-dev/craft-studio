@@ -1,7 +1,7 @@
 ---
 id: test-post-3
 title: "확장 가능한 시스템 구축"
-date: Dec 20, 2024
+date: 25년 1월 9일
 category: Category1
 ---
 

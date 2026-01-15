@@ -2,7 +2,7 @@
 id: test-project-10
 number: "13"
 title: 스마트 홈 대시보드
-date: "2025.03"
+date: "2025년 3월"
 thumbnail: /assets/project-1.jpg
 ---
 

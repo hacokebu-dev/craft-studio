@@ -1,7 +1,7 @@
 ---
 id: markdown-test
 title: "Markdown Test"
-date: "January 12, 2026"
+date: "Jan 12, 2026"
 category: "category1"
 description: "A test post to verify markdown functionality."
 ---

@@ -2,7 +2,7 @@
 id: test-project-9
 number: "12"
 title: Project Management Tool
-date: "2025.04"
+date: "Jan 2025"
 thumbnail: /assets/project-3.jpg
 ---
 

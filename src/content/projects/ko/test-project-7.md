@@ -2,7 +2,7 @@
 id: test-project-7
 number: "10"
 title: 피트니스 트래킹 앱
-date: "2025.06"
+date: "2025년 3월"
 thumbnail: /assets/project-1.jpg
 ---
 

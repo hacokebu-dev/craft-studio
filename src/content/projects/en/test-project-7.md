@@ -2,7 +2,7 @@
 id: test-project-7
 number: "10"
 title: Fitness Tracking App
-date: "2025.06"
+date: "Jan 2025"
 thumbnail: /assets/project-1.jpg
 ---
 

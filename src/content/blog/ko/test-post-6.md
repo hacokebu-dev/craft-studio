@@ -1,7 +1,7 @@
 ---
 id: test-post-6
 title: "성능 최적화 팁"
-date: Dec 5, 2024
+date: 25년 1월 9일
 category: Category1
 ---
 

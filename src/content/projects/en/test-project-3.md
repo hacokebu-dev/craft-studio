@@ -2,7 +2,7 @@
 id: test-project-3
 number: "06"
 title: Healthcare Dashboard
-date: "2025.10"
+date: "Jan 2025"
 thumbnail: /assets/project-3.jpg
 ---
 

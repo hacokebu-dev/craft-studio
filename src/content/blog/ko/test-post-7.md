@@ -1,7 +1,7 @@
 ---
 id: test-post-7
 title: "반응형 디자인 모범 사례"
-date: Nov 28, 2024
+date: 25년 1월 9일
 category: Category2
 ---
 

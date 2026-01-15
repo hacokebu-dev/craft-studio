@@ -1,7 +1,7 @@
 ---
 id: test-post-1
 title: "현대 웹 개발의 이해"
-date: Jan 1, 2025
+date: 25년 1월 9일
 category: Category1
 ---
 

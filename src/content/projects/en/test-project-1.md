@@ -2,7 +2,7 @@
 id: test-project-1
 number: "04"
 title: E-commerce Platform Redesign
-date: "2025.12"
+date: "Jan 2025"
 thumbnail: /assets/project-1.jpg
 ---
 

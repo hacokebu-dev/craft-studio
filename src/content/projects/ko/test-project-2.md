@@ -2,7 +2,7 @@
 id: test-project-2
 number: "05"
 title: 모바일 뱅킹 앱
-date: "2025.11"
+date: "2025년 8월"
 thumbnail: /assets/project-2.jpg
 ---
 

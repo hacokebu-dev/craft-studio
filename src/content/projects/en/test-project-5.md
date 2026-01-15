@@ -2,7 +2,7 @@
 id: test-project-5
 number: "08"
 title: Learning Management System
-date: "2025.08"
+date: "Jan 2025"
 thumbnail: /assets/project-2.jpg
 ---
 

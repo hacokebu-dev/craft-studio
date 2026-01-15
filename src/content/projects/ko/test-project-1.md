@@ -2,7 +2,7 @@
 id: test-project-1
 number: "04"
 title: 이커머스 플랫폼 리디자인
-date: "2025.12"
+date: "2025년 8월"
 thumbnail: /assets/project-1.jpg
 ---
 

@@ -1,7 +1,7 @@
 ---
 id: building-in-10-minutes
 title: 만드는 건 이제 10분이면 끝. 근데 누가 돈 낼 건데?
-date: 2025년 1월 1일
+date: 25년 1월
 category: 카테고리1
 ---
 

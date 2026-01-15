@@ -1,7 +1,7 @@
 ---
 id: test-post-4
 title: "효과적인 디자인 시스템"
-date: Dec 15, 2024
+date: 25년 1월 9일
 category: Category2
 ---
 

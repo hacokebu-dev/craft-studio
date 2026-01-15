@@ -1,7 +1,7 @@
 ---
 id: test-post-2
 title: "디자인에서 AI의 미래"
-date: Dec 28, 2024
+date: 25년 1월 9일
 category: Category2
 ---
 

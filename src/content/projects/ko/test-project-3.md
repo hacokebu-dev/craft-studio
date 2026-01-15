@@ -2,7 +2,7 @@
 id: test-project-3
 number: "06"
 title: 헬스케어 대시보드
-date: "2025.10"
+date: "2025년 8월"
 thumbnail: /assets/project-3.jpg
 ---
 

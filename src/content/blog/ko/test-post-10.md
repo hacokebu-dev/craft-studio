@@ -1,7 +1,7 @@
 ---
 id: test-post-10
 title: "프론트엔드 테스트 전략"
-date: Nov 10, 2024
+date: 25년 1월 9일
 category: Category1
 ---
 

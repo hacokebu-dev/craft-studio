@@ -2,7 +2,7 @@
 id: test-project-9
 number: "12"
 title: 프로젝트 관리 도구
-date: "2025.04"
+date: "2025년 3월"
 thumbnail: /assets/project-3.jpg
 ---
 

@@ -1,7 +1,7 @@
 ---
 id: cost-optimization
 title: 직접 운영 vs 대행사 vs 플랫폼 비용 비교! 인스타 체험단 예산 20% 아끼는 최적화 팁
-date: 2025년 1월 9일
+date: 25년 1월 9일
 category: 카테고리3
 ---
 

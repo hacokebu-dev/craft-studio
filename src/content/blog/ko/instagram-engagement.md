@@ -1,7 +1,7 @@
 ---
 id: instagram-engagement
 title: 인스타그램 댓글 이벤트 운영과 인사이트 레포트, 이렇게 바뀌었습니다
-date: 2025년 1월 9일
+date: 25년 1월 9일
 category: 카테고리2
 ---
 
