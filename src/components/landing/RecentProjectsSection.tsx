@@ -29,11 +29,11 @@ const RecentProjectsSection = () => {
         
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {recentProjects.map((project) => (
+          {recentProjects.map((project, index) => (
             <Link
               key={project.id}
               to={getLocalizedPath(`/project/${project.id}`)}
-              className="project-card group"
+              className={`project-card group ${index >= 3 ? 'hidden md:block' : ''}`}
             >
               <div 
                 className="w-full bg-muted"
