@@ -59,7 +59,7 @@ const IntroductionSection = () => {
     <section className="bg-background relative z-20" style={{ marginTop: '-72px' }}>
       <div className="container-main">
         {/* Section 01 */}
-        <div className="py-[5rem]">
+        <div className="py-[3.5rem] md:py-[5rem]">
           <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
             <div className="section-number shrink-0">01</div>
             <div className="flex-1 py-2">
@@ -73,7 +73,7 @@ const IntroductionSection = () => {
         </div>
 
         {/* Section 02 */}
-        <div className="border-t border-ivory/50 py-[5rem]">
+        <div className="border-t border-ivory/50 py-[3.5rem] md:py-[5rem]">
           <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
             <div className="section-number shrink-0">02</div>
             <div className="flex-1 py-2">
@@ -85,7 +85,7 @@ const IntroductionSection = () => {
         </div>
 
         {/* Section 03 */}
-        <div className="border-t border-ivory/50 py-[5rem]">
+        <div className="border-t border-ivory/50 py-[3.5rem] md:py-[5rem]">
           <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
             <div className="section-number shrink-0">03</div>
             <div className="flex-1 py-2 space-y-4">

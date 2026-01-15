@@ -11,7 +11,7 @@ const RecentProjectsSection = () => {
   const recentProjects = getProjects(currentLang as 'en' | 'ko').slice(0, 6);
   
   return (
-    <section className="pt-[5rem] pb-[7.5rem] bg-background">
+    <section className="pt-[3.5rem] md:pt-[5rem] pb-[5rem] md:pb-[7.5rem] bg-background">
       <div className="container-main">
         {/* Header */}
         <div className="flex items-center justify-between mb-12">
