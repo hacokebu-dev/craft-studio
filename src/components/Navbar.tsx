@@ -75,25 +75,34 @@ const Navbar = () => {
       
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-background border-t border-border">
-          <div className="container-main py-4 flex flex-col gap-4 items-center text-center">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={getLocalizedPath(item.path)}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-base font-medium py-2 transition-colors ${
-                  isActive(item.path) ? 'text-accent' : 'text-ivory'
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-            <div className="pt-4 border-t border-border w-full flex justify-center">
-              <LanguageSelector />
+        <>
+          {/* Backdrop - 클릭 시 메뉴 닫기 */}
+          <div 
+            className={`md:hidden fixed inset-0 bg-black/50 z-40 ${isScrolled ? 'top-[60px]' : 'top-[100px]'}`}
+            onClick={() => setIsMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
+          
+          <div className="md:hidden bg-background border-t border-border relative z-50">
+            <div className="container-main py-4 flex flex-col gap-4 items-center text-center">
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  to={getLocalizedPath(item.path)}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`text-base font-medium py-2 transition-colors ${
+                    isActive(item.path) ? 'text-accent' : 'text-ivory'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <div className="pt-4 border-t border-border w-full flex justify-center">
+                <LanguageSelector />
+              </div>
             </div>
           </div>
-        </div>
+        </>
       )}
     </nav>
   );
