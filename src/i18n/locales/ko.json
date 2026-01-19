@@ -28,11 +28,19 @@
   },
   "recentProjects": {
     "title": "최근 프로젝트",
-    "more": "더 보기"
+    "more": "더 보기",
+    "empty": "아직 작성된 프로젝트가 없습니다."
   },
   "recentBlog": {
     "title": "최근 글",
-    "more": "더 보기"
+    "more": "더 보기",
+    "empty": "아직 작성된 글이 없습니다."
+  },
+  "projectList": {
+    "empty": "아직 작성된 프로젝트가 없습니다."
+  },
+  "blogList": {
+    "empty": "아직 작성된 글이 없습니다."
   },
   "footer": {
     "copyright": "© 2026 HACO & KEBU. All rights reserved.",

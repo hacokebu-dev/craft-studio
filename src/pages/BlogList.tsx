@@ -142,22 +142,26 @@ const BlogList = () => {
           </div>
           
           {/* Blog List */}
-          <div>
-            {paginatedPosts.map((post) => (
-              <Link
-                key={post.id}
-                to={getLocalizedPath(`/blog/${post.id}`)}
-                className="blog-item blog-item-bordered group"
-              >
-                <h2 className="blog-item-title">
-                  {post.title}
-                </h2>
-                <span className="blog-item-date">
-                  {post.date}
-                </span>
-              </Link>
-            ))}
-          </div>
+          {paginatedPosts.length > 0 ? (
+            <div>
+              {paginatedPosts.map((post) => (
+                <Link
+                  key={post.id}
+                  to={getLocalizedPath(`/blog/${post.id}`)}
+                  className="blog-item blog-item-bordered group"
+                >
+                  <h2 className="blog-item-title">
+                    {post.title}
+                  </h2>
+                  <span className="blog-item-date">
+                    {post.date}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <p className="text-muted-foreground text-lg">{t('blogList.empty')}</p>
+          )}
           
           {/* Pagination */}
           {totalPages > 1 && (
