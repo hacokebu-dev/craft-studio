@@ -273,6 +273,10 @@
 }
 
 @layer utilities {
+  .text-narrow {
+    max-width: 800px;
+  }
+
   .text-ivory {
     color: hsl(var(--ivory));
   }
