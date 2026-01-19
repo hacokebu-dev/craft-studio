@@ -28,29 +28,33 @@ const RecentProjectsSection = () => {
         </div>
         
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {recentProjects.map((project, index) => (
-            <Link
-              key={project.id}
-              to={getLocalizedPath(`/project/${project.id}`)}
-              className={`project-card group ${index >= 3 ? 'hidden md:block' : ''}`}
-            >
-              <div 
-                className="w-full bg-muted"
-                style={{ aspectRatio: '16 / 10' }}
+        {recentProjects.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {recentProjects.map((project, index) => (
+              <Link
+                key={project.id}
+                to={getLocalizedPath(`/project/${project.id}`)}
+                className={`project-card group ${index >= 3 ? 'hidden md:block' : ''}`}
               >
-                <img
-                  src={project.thumbnail}
-                  alt={project.title}
-                  loading="lazy"
-                  width={640}
-                  height={400}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </Link>
-          ))}
-        </div>
+                <div 
+                  className="w-full bg-muted"
+                  style={{ aspectRatio: '16 / 10' }}
+                >
+                  <img
+                    src={project.thumbnail}
+                    alt={project.title}
+                    loading="lazy"
+                    width={640}
+                    height={400}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <p className="text-muted-foreground text-lg">{t('recentProjects.empty')}</p>
+        )}
       </div>
     </section>
   );

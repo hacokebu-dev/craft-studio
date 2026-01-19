@@ -28,22 +28,26 @@ const RecentBlogSection = () => {
         </div>
         
         {/* List */}
-        <div>
-          {recentPosts.map((post) => (
-            <Link
-              key={post.id}
-              to={getLocalizedPath(`/blog/${post.id}`)}
-              className="blog-item blog-item-bordered group"
-            >
-              <h3 className="blog-item-title">
-                {post.title}
-              </h3>
-              <span className="blog-item-date">
-                {post.date}
-              </span>
-            </Link>
-          ))}
-        </div>
+        {recentPosts.length > 0 ? (
+          <div>
+            {recentPosts.map((post) => (
+              <Link
+                key={post.id}
+                to={getLocalizedPath(`/blog/${post.id}`)}
+                className="blog-item blog-item-bordered group"
+              >
+                <h3 className="blog-item-title">
+                  {post.title}
+                </h3>
+                <span className="blog-item-date">
+                  {post.date}
+                </span>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <p className="text-muted-foreground text-lg">{t('recentBlog.empty')}</p>
+        )}
       </div>
     </section>
   );

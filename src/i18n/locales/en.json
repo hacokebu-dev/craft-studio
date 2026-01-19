@@ -28,11 +28,19 @@
   },
   "recentProjects": {
     "title": "Latest Projects",
-    "more": "See more"
+    "more": "See more",
+    "empty": "No projects yet."
   },
   "recentBlog": {
     "title": "Latest Posts",
-    "more": "See more"
+    "more": "See more",
+    "empty": "No posts yet."
+  },
+  "projectList": {
+    "empty": "No projects yet."
+  },
+  "blogList": {
+    "empty": "No posts yet."
   },
   "footer": {
     "copyright": "© 2026 HACO & KEBU. All rights reserved.",
