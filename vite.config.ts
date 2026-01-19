@@ -6,6 +6,7 @@ import { execSync } from "child_process";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: '/craft-studio/',
   server: {
     host: "::",
     port: 8080,
