@@ -24,7 +24,7 @@ function parseFrontmatter(rawContent: string): { data: Record<string, string>; c
   const lines = rawContent.split('\n');
   const data: Record<string, string> = {};
   let content = rawContent;
-  
+
   if (lines[0]?.trim() === '---') {
     let endIndex = -1;
     for (let i = 1; i < lines.length; i++) {
@@ -38,8 +38,8 @@ function parseFrontmatter(rawContent: string): { data: Record<string, string>; c
         const key = line.substring(0, colonIndex).trim();
         let value = line.substring(colonIndex + 1).trim();
         // Remove surrounding quotes if present
-        if ((value.startsWith('"') && value.endsWith('"')) || 
-            (value.startsWith("'") && value.endsWith("'"))) {
+        if ((value.startsWith('"') && value.endsWith('"')) ||
+          (value.startsWith("'") && value.endsWith("'"))) {
           value = value.slice(1, -1);
         }
         data[key] = value;
@@ -49,7 +49,7 @@ function parseFrontmatter(rawContent: string): { data: Record<string, string>; c
       content = lines.slice(endIndex + 1).join('\n').trim();
     }
   }
-  
+
   return { data, content };
 }
 
@@ -89,7 +89,7 @@ function parseProject(rawContent: string): Project {
 export function getBlogPosts(lang: 'en' | 'ko'): BlogPost[] {
   const files = lang === 'ko' ? blogFilesKo : blogFilesEn;
   const posts: BlogPost[] = [];
-  
+
   for (const path in files) {
     const rawContent = files[path] as string;
     const post = parseBlogPost(rawContent);
@@ -97,7 +97,7 @@ export function getBlogPosts(lang: 'en' | 'ko'): BlogPost[] {
       posts.push(post);
     }
   }
-  
+
   // Sort by date (newest first)
   return posts.sort((a, b) => {
     const dateA = new Date(a.date.replace(/년|월|일/g, match => {
@@ -122,7 +122,7 @@ export function getBlogPost(id: string, lang: 'en' | 'ko'): BlogPost | null {
 export function getProjects(lang: 'en' | 'ko'): Project[] {
   const files = lang === 'ko' ? projectFilesKo : projectFilesEn;
   const projects: Project[] = [];
-  
+
   for (const path in files) {
     const rawContent = files[path] as string;
     const project = parseProject(rawContent);
@@ -130,7 +130,7 @@ export function getProjects(lang: 'en' | 'ko'): Project[] {
       projects.push(project);
     }
   }
-  
+
   // Sort by number (descending)
   return projects.sort((a, b) => parseInt(b.number) - parseInt(a.number));
 }
@@ -143,7 +143,7 @@ export function getProject(id: string, lang: 'en' | 'ko'): Project | null {
 // Categories for blog filtering
 export const categories = [
   { id: 'all', name: 'All', nameKo: '전체' },
-  { id: 'category1', name: 'Category1', nameKo: '카테고리1' },
-  { id: 'category2', name: 'Category2', nameKo: '카테고리2' },
-  { id: 'category3', name: 'Category3', nameKo: '카테고리3' },
+  { id: 'makingstory', name: 'Making Story', nameKo: '제작기' },
+  // { id: 'category2', name: 'Category2', nameKo: '카테고리2' },
+  // { id: 'category3', name: 'Category3', nameKo: '카테고리3' },
 ];
