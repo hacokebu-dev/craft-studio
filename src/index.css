@@ -270,6 +270,12 @@
   .markdown-content div.seamless p {
     @apply mb-0;
   }
+
+  /* Text narrow utility for markdown content */
+  .markdown-content .text-narrow {
+    width: 100%;
+    max-width: 800px;
+  }
 }
 
 @layer utilities {
