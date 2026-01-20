@@ -90,21 +90,6 @@ const ProjectDetail = () => {
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeRaw]}
-              components={{
-                img: ({ src, alt }) => (
-                  <div 
-                    className="w-full bg-muted my-8"
-                    style={{ aspectRatio: '16 / 10' }}
-                  >
-                    <img
-                      src={src}
-                      alt={alt || ''}
-                      loading="lazy"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                ),
-              }}
             >
               {project.content}
             </ReactMarkdown>
