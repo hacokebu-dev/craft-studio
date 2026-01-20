@@ -181,7 +181,11 @@
   }
 
   .markdown-content a {
-    @apply text-accent underline;
+    @apply text-ivory underline underline-offset-2 transition-colors duration-200;
+  }
+
+  .markdown-content a:hover {
+    @apply text-accent;
   }
 
   /* Underline support */
