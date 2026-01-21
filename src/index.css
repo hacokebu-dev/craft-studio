@@ -137,11 +137,13 @@
   }
 
   .markdown-content h1 {
-    @apply text-3xl font-bold mb-6 mt-8;
+    @apply font-bold mb-6 mt-8;
+    font-size: 2.6rem;
   }
 
   .markdown-content h2 {
-    @apply text-2xl font-bold mb-4 mt-6;
+    @apply font-bold mb-4 mt-6;
+    font-size: 1.8rem;
   }
 
   .markdown-content h3 {
