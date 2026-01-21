@@ -4,9 +4,9 @@ import * as path from 'path';
 const SITE_URL = 'https://hacokebu.com';
 
 interface PageEntry {
-  loc: string;
+  enPath: string;
+  koPath: string;
   lastmod?: string;
-  changefreq: string;
   priority: string;
 }
 
@@ -48,54 +48,91 @@ function getContentEntries(type: 'blog' | 'projects'): { id: string; date: strin
   });
 }
 
-function formatDate(dateStr: string): string {
+// W3C Datetime 형식으로 변환 (한국 시간대 +09:00)
+function formatDateW3C(dateStr: string): string {
   try {
-    const date = new Date(dateStr);
-    return date.toISOString().split('T')[0];
+    // 날짜 문자열에서 년월일 추출
+    const cleanDate = dateStr.replace(/년|월/g, '-').replace(/일/g, '').trim();
+    const date = new Date(cleanDate);
+    
+    if (isNaN(date.getTime())) {
+      return new Date().toISOString().replace('Z', '+09:00').replace(/\.\d{3}/, '');
+    }
+    
+    // YYYY-MM-DDTHH:MM:SS+09:00 형식
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    
+    return `${year}-${month}-${day}T00:00:00+09:00`;
   } catch {
-    return new Date().toISOString().split('T')[0];
+    return new Date().toISOString().replace('Z', '+09:00').replace(/\.\d{3}/, '');
   }
 }
 
+function generateUrlEntry(enPath: string, koPath: string, lastmod: string, priority: string): string {
+  const enUrl = `${SITE_URL}${enPath}`;
+  const koUrl = `${SITE_URL}${koPath}`;
+  
+  return `  <url>
+    <loc>${enUrl}</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="${koUrl}"/>
+    <lastmod>${lastmod}</lastmod>
+    <priority>${priority}</priority>
+  </url>
+  <url>
+    <loc>${koUrl}</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="${koUrl}"/>
+    <lastmod>${lastmod}</lastmod>
+    <priority>${priority}</priority>
+  </url>`;
+}
+
 function generateSitemap(): string {
-  const today = new Date().toISOString().split('T')[0];
+  const today = formatDateW3C(new Date().toISOString().split('T')[0]);
   
   // 고정 페이지
   const staticPages: PageEntry[] = [
-    { loc: '/', lastmod: today, changefreq: 'weekly', priority: '1.0' },
-    { loc: '/project', lastmod: today, changefreq: 'weekly', priority: '0.8' },
-    { loc: '/blog', lastmod: today, changefreq: 'weekly', priority: '0.8' },
-    { loc: '/ko', lastmod: today, changefreq: 'weekly', priority: '1.0' },
-    { loc: '/ko/project', lastmod: today, changefreq: 'weekly', priority: '0.8' },
-    { loc: '/ko/blog', lastmod: today, changefreq: 'weekly', priority: '0.8' },
+    { enPath: '/', koPath: '/ko', lastmod: today, priority: '1.0' },
+    { enPath: '/project', koPath: '/ko/project', lastmod: today, priority: '0.8' },
+    { enPath: '/blog', koPath: '/ko/blog', lastmod: today, priority: '0.8' },
   ];
+
+  // 정적 페이지 URL 엔트리 생성
+  const staticEntries = staticPages.map(page => 
+    generateUrlEntry(page.enPath, page.koPath, page.lastmod!, page.priority)
+  );
 
   // 동적 페이지 - 블로그
   const blogEntries = getContentEntries('blog');
-  const blogPages: PageEntry[] = blogEntries.flatMap(entry => [
-    { loc: `/blog/${entry.id}`, lastmod: formatDate(entry.date), changefreq: 'monthly', priority: '0.6' },
-    { loc: `/ko/blog/${entry.id}`, lastmod: formatDate(entry.date), changefreq: 'monthly', priority: '0.6' },
-  ]);
+  const blogUrlEntries = blogEntries.map(entry => 
+    generateUrlEntry(
+      `/blog/${entry.id}`,
+      `/ko/blog/${entry.id}`,
+      formatDateW3C(entry.date),
+      '0.6'
+    )
+  );
 
   // 동적 페이지 - 프로젝트
   const projectEntries = getContentEntries('projects');
-  const projectPages: PageEntry[] = projectEntries.flatMap(entry => [
-    { loc: `/project/${entry.id}`, lastmod: formatDate(entry.date), changefreq: 'monthly', priority: '0.7' },
-    { loc: `/ko/project/${entry.id}`, lastmod: formatDate(entry.date), changefreq: 'monthly', priority: '0.7' },
-  ]);
+  const projectUrlEntries = projectEntries.map(entry => 
+    generateUrlEntry(
+      `/project/${entry.id}`,
+      `/ko/project/${entry.id}`,
+      formatDateW3C(entry.date),
+      '0.7'
+    )
+  );
 
-  const allPages = [...staticPages, ...projectPages, ...blogPages];
-
-  const urlEntries = allPages.map(page => `  <url>
-    <loc>${SITE_URL}${page.loc}</loc>
-    <lastmod>${page.lastmod}</lastmod>
-    <changefreq>${page.changefreq}</changefreq>
-    <priority>${page.priority}</priority>
-  </url>`).join('\n');
+  const allEntries = [...staticEntries, ...projectUrlEntries, ...blogUrlEntries].join('\n');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urlEntries}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${allEntries}
 </urlset>
 `;
 }
