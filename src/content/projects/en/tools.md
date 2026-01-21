@@ -91,7 +91,7 @@ thumbnail: /assets/tools_01.jpg
 <br>
 <div class="text-narrow">
 <h1>Design & UX Features</h1>
-<h3>01. Visual-Centric Intuitive Menu</h3>
+<h2>01. Visual-Centric Intuitive Menu</h2>
 <img src="/assets/tools_11.jpg" alt="11" />
 <ul>
   <li>Icon Metaphors: Rather than relying solely on text-based menus, we used icon imagery reflecting the character of each tool to enhance both accessibility and aesthetics.</li>
@@ -100,7 +100,7 @@ thumbnail: /assets/tools_01.jpg
 <ul>
   <li>Interactive Feedback: Icons subtly enlarge when hovered over, allowing users to clearly identify the function they are currently selecting.</li>
 </ul>
-<h3>02. Clear Interface Requiring No Second-Guessing</h3>
+<h2>02. Clear Interface Requiring No Second-Guessing</h2>
 <img src="/assets/tools_13.jpg" alt="13" />
 <ul>
   <li>Optimized Status Displays: Button activation conditions are intuitively designed. Buttons that haven't met requirements are clearly marked as 'Disabled' to prevent unnecessary clicks.</li>
@@ -109,7 +109,7 @@ thumbnail: /assets/tools_01.jpg
 <ul>
   <li>Outlink Indicators: Menus leading to external sites are marked with outlink icons to notify users of page exits in advance.</li>
 </ul>
-<h3>03. Friendly Real-Time Status Notifications</h3>
+<h2>03. Friendly Real-Time Status Notifications</h2>
 <img src="/assets/tools_15.jpg" alt="15" />
 <ul>
   <li>Toast Notifications: A toast message appears at the bottom whenever major functions (like copy or delete) are executed, providing clear confirmation that the task was successful.</li>
@@ -119,17 +119,17 @@ thumbnail: /assets/tools_01.jpg
 
 <div class="text-narrow">
 <h1>Brand Design</h1>
-<h3>01. Design Metaphor: Physicality of Paper</h3>
+<h2>01. Design Metaphor: Physicality of Paper</h2>
 <img src="/assets/tools_16.jpg" alt="16" />
 <ul>
   <li>We took ‘Paper,’ a central and familiar element of an editor’s daily work, as our design motif. To recreate the feeling of a manuscript laid casually on a desk, elements are rotated by about 2 degrees, giving paper a sense of presence within a flat digital screen. Folded-corner details were added to visually express the three-dimensionality of paper.</li>
   </ul>
-<h3>02. Color System: Classic Black & White</h3>
+<h2>02. Color System: Classic Black & White</h2>
 <img src="/assets/tools_17.jpg" alt="17" />
 <ul>
   <li>In line with Editor's Room's identity, we used Black & White as the main colors. This symbolizes the editor's professionalism—focusing on the 'text' and 'content' itself rather than flashy decoration—and provides a work environment that reduces eye strain during long hours of use.</li>
 </ul>
-<h3>03. Identity System</h3>
+<h2>03. Identity System</h2>
 <img src="/assets/tools_18.jpg" alt="18" />
 <ul>
   <li>We established an integrated identity system by combining the 〈Tools〉 logo with the Editor's Room wordmark. This demonstrates that the service is a natural extension of the Editor's Room brand.</li>
