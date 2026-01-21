@@ -62,7 +62,7 @@ const IntroductionSection = () => {
         <div className="py-[3.5rem] md:py-[5rem]">
           <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
             <div className="section-number shrink-0">01</div>
-            <div className="flex-1 py-2">
+            <div className="flex-1 pt-[0.2rem] pb-2">
               <p className="text-[2rem] leading-[2.8rem] text-secondary break-keep">
                 <span className="whitespace-nowrap">{t('intro.section1.name')}</span>
                 <span className="text-[1.25rem] whitespace-nowrap">{t('intro.section1.pronunciation')}</span>
@@ -76,7 +76,7 @@ const IntroductionSection = () => {
         <div className="border-t border-ivory/50 py-[3.5rem] md:py-[5rem]">
           <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
             <div className="section-number shrink-0">02</div>
-            <div className="flex-1 py-2">
+            <div className="flex-1 pt-[0.2rem] pb-2">
               <p className="text-[2rem] leading-[2.8rem] text-secondary break-keep">
                 {t('intro.section2.description')}
               </p>
@@ -88,7 +88,7 @@ const IntroductionSection = () => {
         <div className="border-t border-ivory/50 py-[3.5rem] md:py-[5rem]">
           <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
             <div className="section-number shrink-0">03</div>
-            <div className="flex-1 py-2 space-y-4">
+            <div className="flex-1 pt-[0.2rem] pb-2 space-y-4">
               <p className="text-[2rem] leading-[2.8rem] text-secondary break-keep">
                 {t('intro.section3.description1')}
               </p>
