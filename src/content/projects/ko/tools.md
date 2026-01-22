@@ -116,7 +116,8 @@ thumbnail: /assets/tools_01.jpg
 </ul>
 </div>
 <br>
-
+<hr>
+<br>
 <div class="text-narrow">
 <h1>브랜드 디자인</h1>
 <h2>01. 디자인 메타포: 종이의 물성</h2>

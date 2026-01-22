@@ -116,7 +116,8 @@ thumbnail: /assets/tools_01.jpg
 </ul>
 </div>
 <br>
-
+<hr>
+<br>
 <div class="text-narrow">
 <h1>Brand Design</h1>
 <h2>01. Design Metaphor: Physicality of Paper</h2>
