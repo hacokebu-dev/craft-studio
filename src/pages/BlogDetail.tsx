@@ -103,15 +103,12 @@ const BlogDetail = () => {
                 rehypePlugins={[rehypeRaw]}
                 components={{
                   img: ({ src, alt }) => (
-                    <div 
-                      className="w-full bg-muted my-8"
-                      style={{ aspectRatio: '16 / 10' }}
-                    >
+                    <div className="w-full my-8">
                       <img
                         src={src}
                         alt={alt || ''}
                         loading="lazy"
-                        className="w-full h-full object-cover"
+                        className="w-full h-auto"
                       />
                     </div>
                   ),
