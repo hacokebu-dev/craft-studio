@@ -28,9 +28,16 @@ const BlogList = () => {
   
   const filteredPosts = selectedCategory === 'all'
     ? allPosts
-    : allPosts.filter((post) => 
-        post.category.toLowerCase() === selectedCategory.toLowerCase()
-      );
+    : allPosts.filter((post) => {
+        const category = categories.find(c => c.id === selectedCategory);
+        if (!category) return false;
+        const postCategory = post.category.toLowerCase();
+        return (
+          postCategory === category.id.toLowerCase() ||
+          postCategory === category.name.toLowerCase() ||
+          postCategory === category.nameKo.toLowerCase()
+        );
+      });
   
   const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
   const validPage = Math.max(1, Math.min(currentPage, totalPages || 1));
