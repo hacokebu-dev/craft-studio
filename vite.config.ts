@@ -24,8 +24,9 @@ export default defineConfig(({ mode }) => ({
           try {
             execSync('npx tsx scripts/generate-sitemap.ts', { stdio: 'inherit' });
             execSync('npx tsx scripts/generate-rss.ts', { stdio: 'inherit' });
+            execSync('npx tsx scripts/generate-spa-redirects.ts', { stdio: 'inherit' });
           } catch (e) {
-            console.error('Failed to generate sitemap or RSS:', e);
+            console.error('Failed to generate sitemap, RSS, or SPA redirects:', e);
           }
         }
       }
