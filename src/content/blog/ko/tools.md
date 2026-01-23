@@ -87,3 +87,13 @@ Tools는 화려한 기술로 만든 서비스는 아니지만 실제로 잘 쓰�
 &nbsp;
 
 &nbsp; 
+
+<hr>
+<br>
+
+## 새 글이 올라오면 알려드릴게요
+
+· <a href="https://docs.google.com/forms/d/e/1FAIpQLScyHuizTnOoWGSPrmEpZFMyyVwV7yFAOE-V315bViF04uWnZA/viewform?usp=publish-editor" target="_blank">뉴스레터 신청</a>
+
+· <a href="https://hacokebu.com/ko/rss.xml" target="_blank">RSS 구독</a>
+

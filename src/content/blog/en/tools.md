@@ -86,4 +86,11 @@ Finally, as mentioned earlier, Tools manages data via JSON for maintenance. Whil
 Tools wasn't built with flashy technology, but I prioritized one question above all: “Will this actually be useful?” My hope is that Tools becomes a practical, everyday companion for editors.
 &nbsp;
 
-&nbsp;
+&nbsp; 
+
+<hr>
+<br>
+
+## Don’t miss the next post.
+
+· <a href="https://hacokebu.com/rss.xml" target="_blank">Subscribe via RSS</a>
