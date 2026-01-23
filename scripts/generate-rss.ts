@@ -9,6 +9,7 @@ interface BlogEntry {
   date: string;
   description?: string;
   content: string;
+  image?: string;
 }
 
 function parseFrontmatter(content: string): { data: Record<string, string>; content: string } {
@@ -59,12 +60,18 @@ function getBlogEntries(lang: 'en' | 'ko'): BlogEntry[] {
     const { data, content } = parseFrontmatter(rawContent);
 
     if (data.id) {
+      // Get image from ogImage frontmatter or extract from content
+      const image = data.ogImage 
+        ? (data.ogImage.startsWith('/') ? `${SITE_URL}${data.ogImage}` : data.ogImage)
+        : extractFirstImage(content);
+
       entries.push({
         id: data.id,
         title: data.title || '',
         date: data.date || '',
         description: data.description,
         content: content,
+        image: image || undefined,
       });
     }
   }
@@ -83,6 +90,36 @@ function getBlogEntries(lang: 'en' | 'ko'): BlogEntry[] {
     }));
     return dateB.getTime() - dateA.getTime();
   });
+}
+
+function extractFirstImage(content: string): string | null {
+  // Markdown image: ![alt](/assets/image.jpg)
+  const mdMatch = content.match(/!\[[^\]]*\]\(([^)]+)\)/);
+  if (mdMatch && mdMatch[1]) {
+    const imagePath = mdMatch[1];
+    if (imagePath.startsWith('/')) {
+      return `${SITE_URL}${imagePath}`;
+    }
+    if (imagePath.startsWith('http')) {
+      return imagePath;
+    }
+    return `${SITE_URL}/${imagePath}`;
+  }
+
+  // HTML img tag: <img src="/assets/image.jpg">
+  const htmlMatch = content.match(/<img[^>]+src=["']([^"']+)["']/);
+  if (htmlMatch && htmlMatch[1]) {
+    const imagePath = htmlMatch[1];
+    if (imagePath.startsWith('/')) {
+      return `${SITE_URL}${imagePath}`;
+    }
+    if (imagePath.startsWith('http')) {
+      return imagePath;
+    }
+    return `${SITE_URL}/${imagePath}`;
+  }
+
+  return null;
 }
 
 function extractDescription(content: string, maxLength: number = 200): string {
@@ -159,18 +196,21 @@ function generateRssFeed(lang: 'en' | 'ko'): string {
   const items = entries.map(entry => {
     const description = entry.description || extractDescription(entry.content);
     const link = `${SITE_URL}${langPath}/blog/${entry.id}`;
+    const imageTag = entry.image 
+      ? `\n      <media:content url="${escapeXml(entry.image)}" medium="image" />\n      <media:thumbnail url="${escapeXml(entry.image)}" />`
+      : '';
 
     return `    <item>
       <title>${escapeXml(entry.title)}</title>
       <link>${link}</link>
       <guid isPermaLink="true">${link}</guid>
       <pubDate>${formatDateRFC822(entry.date)}</pubDate>
-      <description>${escapeXml(description)}</description>
+      <description>${escapeXml(description)}</description>${imageTag}
     </item>`;
   }).join('\n');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>${escapeXml(channelTitle)}</title>
     <link>${SITE_URL}${langPath}/blog</link>
