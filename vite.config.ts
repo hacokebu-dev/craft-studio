@@ -23,8 +23,9 @@ export default defineConfig(({ mode }) => ({
         if (mode === 'production') {
           try {
             execSync('npx tsx scripts/generate-sitemap.ts', { stdio: 'inherit' });
+            execSync('npx tsx scripts/generate-rss.ts', { stdio: 'inherit' });
           } catch (e) {
-            console.error('Failed to generate sitemap:', e);
+            console.error('Failed to generate sitemap or RSS:', e);
           }
         }
       }
