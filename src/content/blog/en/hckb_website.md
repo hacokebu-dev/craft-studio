@@ -1,6 +1,6 @@
 ---
 id: hckb_website
-title: Designing and Building the HACO&KEBU Website
+title: Designing and Building the HACO & KEBU Website
 date: Jan 23, 2026
 category: Making Story
 ---
@@ -21,7 +21,7 @@ Then came the Aha moment. I realized I shouldn’t be stressing over the design 
 
 ## Finding Meaning
 
-Even without a finished portfolio, I started organizing the content. Writing the headline for the Hero section helped me define exactly what I do. I clarified the meaning behind the unique name 'HACO&KEBU,' the values I stand for, and what I want to achieve in the future.
+Even without a finished portfolio, I started organizing the content. Writing the headline for the Hero section helped me define exactly what I do. I clarified the meaning behind the unique name 'HACO & KEBU,' the values I stand for, and what I want to achieve in the future.
 &nbsp;
 
 &nbsp; 
@@ -30,9 +30,11 @@ Even without a finished portfolio, I started organizing the content. Writing the
 
 When I returned to the design, I doubled down on the "bold" theme. (Maybe because I don’t get to be this daring at my day job!) I went with oversized fonts and a striking color palette: Black, Ivory, and Red.
 
+I did worry a bit about readability—long stretches of ivory text on a black background isn't always the most comfortable experience. But since the contrast passed accessibility standards and I wasn't in the mood to design a separate "Light Mode," I decided to stick to my guns.
+
 <img src ="/assets/hckb_07.jpg">
 
-I did worry a bit about readability—long stretches of ivory text on a black background isn't always the most comfortable experience. But since the contrast passed accessibility standards and I wasn't in the mood to design a separate "Light Mode," I decided to stick to my guns. I mocked up about five core pages in Figma, trusting that AI could handle the rest, like the 404 and empty states.
+I mocked up about five core pages in Figma, trusting that AI could handle the rest, like the 404 and empty states.
 &nbsp;
 
 &nbsp; 
@@ -57,6 +59,8 @@ I fed my Figma designs and detailed specs into Lovable. I asked for everything: 
 Lovable has a cool feature called 'Visual Edits' where you can click an element and prompt a change. To be honest, it was a bit frustrating, so I ended up giving specific instructions by checking the class names myself.
 
 However, the communication was great. it understood me surprisingly well. it understood me perfectly. One of the best parts was the local environment sync—pushing code from my machine to Lovable and vice versa was smooth.
+
+For those curious about the numbers, I made over 100 requests in total, ranging from quick questions to complex coding tasks. Since I had free access thanks to a promotion, I didn't worry about being efficient—I just fired away and used up about 100 credits.
 &nbsp;
 
 &nbsp; 

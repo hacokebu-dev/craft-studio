@@ -8,14 +8,14 @@ category: Making Story
 <img src ="/assets/tools_02.jpg">
 
 ‘Tools’ is a web service created under the concept of an ‘All-in-One Workflow Toolkit for Publishing Editors.’ This project began with a proposal from the publishing editor community, ‘Editor's Room.’ After launching the community, they faced a familiar challenge:
-“We need a reason for people to keep coming back.” Their answer was to gather web-based tools that would be genuinely helpful for an editor's daily work, and they proposed the implementation of this idea to HACO&KEBU.
+“We need a reason for people to keep coming back.” Their answer was to gather web-based tools that would be genuinely helpful for an editor's daily work, and they proposed the implementation of this idea to HACO & KEBU.
 &nbsp;
 
 &nbsp; 
 
 ## Planning Rooted in the Voices of Professionals
 <img src ="/assets/tools_19.jpg">
-As HACO&KEBU, we didn’t have first-hand experience with the day-to-day tasks of publishing editors. so we couldn't build these tools based on imagination alone. We conducted interviews with working editors and, through that process, planned six core editorial tools. While speaking with them, one thing became clear: editors are, in many ways, office workers like anyone else. Therefore, in addition to specialized editorial tools, we decided to develop features like a ‘Tenure Calculator’ and a ‘Net Salary Table’—the kind of resources people find themselves searching for quite often. Furthermore, we included a bookmark page that aggregates useful websites for editors.
+As HACO & KEBU, we didn’t have first-hand experience with the day-to-day tasks of publishing editors. so we couldn't build these tools based on imagination alone. We conducted interviews with working editors and, through that process, planned six core editorial tools. While speaking with them, one thing became clear: editors are, in many ways, office workers like anyone else. Therefore, in addition to specialized editorial tools, we decided to develop features like a ‘Tenure Calculator’ and a ‘Net Salary Table’—the kind of resources people find themselves searching for quite often. Furthermore, we included a bookmark page that aggregates useful websites for editors.
 &nbsp;
 
 &nbsp; 
