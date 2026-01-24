@@ -10,7 +10,7 @@ category: Making Story
 
 ## The Spark
 
-It came to me all of a sudden. I suddenly realized I needed a dedicated space to showcase my work. I’d always told myself, "I'll build a website eventually," but "eventually" never had a date. As soon as the thought struck, I decided: I’m doing this right now.
+The idea to build the Hako & Kebu website hit me out of nowhere. I think it was the realization that it had already been a year since I first registered the domain. I always knew I’d get around to it 'someday,' but that reminder was the spark I needed. I decided right then and there: it's time to build.
 
 As a designer at my core, my mind immediately jumped to the visual concept. I wanted something bold yet minimalist. But then the overthinking started. What exactly am I showcasing? How should I do it? I even hesitated, thinking, "Should I create the assets myself, or will AI produce something better anyway?"
 
