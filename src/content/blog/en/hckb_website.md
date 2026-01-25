@@ -5,7 +5,7 @@ date: Jan 23, 2026
 category: Making Story
 ---
 
-<img src ="/assets/hckb_01.jpg">
+<img src="/assets/hckb_01.jpg">
 &nbsp;
 
 ## The Spark
@@ -32,7 +32,7 @@ When I returned to the design, I doubled down on the "bold" theme. (Maybe becaus
 
 I did worry a bit about readability—long stretches of ivory text on a black background isn't always the most comfortable experience. But since the contrast passed accessibility standards and I wasn't in the mood to design a separate "Light Mode," I decided to stick to my guns.
 
-<img src ="/assets/hckb_07.jpg">
+<img src="/assets/hckb_07.jpg">
 
 I mocked up about five core pages in Figma, trusting that AI could handle the rest, like the 404 and empty states.
 &nbsp;
@@ -41,7 +41,7 @@ I mocked up about five core pages in Figma, trusting that AI could handle the re
 
 ## Enter Lovable
 
-<img src ="/assets/hckb_04.jpg">
+<img src="/assets/hckb_04.jpg">
 
 Then came the technical side. I initially thought of using Gatsby, but heard Astro is the way to go these days. While looking into Astro, I had a thought: "Why not just build it myself with an AI agent?"
 
@@ -54,7 +54,7 @@ As luck would have it, I got a chance to try the PRO plan of a service called Lo
 
 I fed my Figma designs and detailed specs into Lovable. I asked for everything: multi-language support (i18n), Unicorn Studio scripts for the Hero section, a Markdown-based portfolio and blog, and full responsiveness. The first draft looked okay, but it wasn't quite at the design level I expected, so I had to roll up my sleeves.
 
-<img src ="/assets/hckb_05.jpg">
+<img src="/assets/hckb_05.jpg">
 
 Lovable has a cool feature called 'Visual Edits' where you can click an element and prompt a change. To be honest, it was a bit frustrating, so I ended up giving specific instructions by checking the class names myself.
 
@@ -67,7 +67,7 @@ For those curious about the numbers, I made over 100 requests in total, ranging 
 
 ## The Logo
 
-<img src ="/assets/hckb_06.jpg">
+<img src="/assets/hckb_06.jpg">
 
 I couldn't launch without a logo. I knew I wanted a drum motif. In Korea, there’s an expression that translates roughly to “playing both the drum and the janggu(traditional Korean double-headed drum) alone,” which basically means being a one-man show. That’s exactly how I felt.
 

@@ -5,7 +5,7 @@ date: Jan 22, 2026
 category: Making Story
 ---
 
-<img src ="/assets/tools_02.jpg">
+<img src="/assets/tools_02.jpg">
 
 ‘Tools’ is a web service created under the concept of an ‘All-in-One Workflow Toolkit for Publishing Editors.’ This project began with a proposal from the publishing editor community, ‘Editor's Room.’ After launching the community, they faced a familiar challenge:
 “We need a reason for people to keep coming back.” Their answer was to gather web-based tools that would be genuinely helpful for an editor's daily work, and they proposed the implementation of this idea to HACO & KEBU.
@@ -14,7 +14,7 @@ category: Making Story
 &nbsp; 
 
 ## Planning Rooted in the Voices of Professionals
-<img src ="/assets/tools_19.jpg">
+<img src="/assets/tools_19.jpg">
 As HACO & KEBU, we didn’t have first-hand experience with the day-to-day tasks of publishing editors. so we couldn't build these tools based on imagination alone. We conducted interviews with working editors and, through that process, planned six core editorial tools. While speaking with them, one thing became clear: editors are, in many ways, office workers like anyone else. Therefore, in addition to specialized editorial tools, we decided to develop features like a ‘Tenure Calculator’ and a ‘Net Salary Table’—the kind of resources people find themselves searching for quite often. Furthermore, we included a bookmark page that aggregates useful websites for editors.
 &nbsp;
 
@@ -23,7 +23,7 @@ As HACO & KEBU, we didn’t have first-hand experience with the day-to-day tasks
 ## Planning → Prototype → Review → Iteration
 
 I was responsible for the detailed feature planning, created a prototype, and then received feedback from editors. This review process led to several crucial improvements, such as:
-<img src ="/assets/tools_20.jpg">
+<img src="/assets/tools_20.jpg">
 - A ‘One-click Copy’ feature for book spine calculations and character counts.
 - Displaying the count in ‘Manuscript Paper Sheets’ (wongoji) for character counts.
 - Providing guidance on image file extensions when generating QR codes.
@@ -36,14 +36,14 @@ These were details we would likely have missed without direct feedback from real
 ## Keeping Technology as Simple as Possible
 
 For this project, I deliberately avoided overengineering the tech stack. Looking at the service specifications, there was no compelling reason to use the latest, most complex technologies. Instead, I stuck to HTML, CSS, and using vanilla JavaScript as much as possible. This was a choice made to minimize future maintenance issues.
-<img src ="/assets/tools_21.jpg">
+<img src="/assets/tools_21.jpg">
 For features requiring data persistence, I used Local Storage, and for sections like bookmarks that require data management, I utilized JSON files. Again, these choices were made to ensure ease of maintenance.
 &nbsp;
 
 &nbsp; 
 
 ## Concise and Reusable Design
-<img src ="/assets/tools_22.jpg">
+<img src="/assets/tools_22.jpg">
 The design criteria were also clear: simplicity and reusability.
 
 I wanted design elements developed for one page to be easily applicable to others. I designed the system so that new tools can be added without cluttering the interface. and will maintain a consistent look and feel.
@@ -61,7 +61,7 @@ Initially, I chose Netlify Drop for deployment, thinking it would be easy for so
 ## The Fun Part: Book Size Comparison Table
 
 The most enjoyable challenge was the book size comparison feature. Simply showing numbers felt no different from existing data, and showing only images lacked precision. The solution I came up with was a structure where the specific trim size appears visually when you hover over the table.
-<img src ="/assets/tools_23.jpg">
+<img src="/assets/tools_23.jpg">
 I brainstormed how to solve this technically and landed on the simplest approach: creating individual images for each trim size and displaying the corresponding image on hover. Despite its technical simplicity, it creates a surprisingly fun and engaging interaction.
 &nbsp;
 
