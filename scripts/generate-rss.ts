@@ -106,8 +106,8 @@ function extractFirstImage(content: string): string | null {
     return `${SITE_URL}/${imagePath}`;
   }
 
-  // HTML img tag: <img src="/assets/image.jpg">
-  const htmlMatch = content.match(/<img[^>]+src=["']([^"']+)["']/);
+  // HTML img tag: <img src="/assets/image.jpg"> (handles spaces around =)
+  const htmlMatch = content.match(/<img[^>]+src\s*=\s*["']([^"']+)["']/);
   if (htmlMatch && htmlMatch[1]) {
     const imagePath = htmlMatch[1];
     if (imagePath.startsWith('/')) {
