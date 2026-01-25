@@ -5,6 +5,8 @@ Disallow: /assets/
 Disallow: /placeholder.svg
 Disallow: /*.svg$
 Disallow: /*.ico$
+Disallow: /search/
+Disallow: /*.php
 
 # AI 학습용 크롤러 차단
 User-agent: GPTBot
