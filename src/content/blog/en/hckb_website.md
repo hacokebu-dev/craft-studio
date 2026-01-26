@@ -4,8 +4,10 @@ title: Designing and Building the HACO & KEBU Website
 date: Jan 23, 2026
 category: Making Story
 ---
-
+<figure>
 <img src="/assets/hckb_01.jpg">
+<figcaption>"Create small digital tools and toys."</figcaption>
+</figure>
 &nbsp;
 
 ## The Spark
@@ -43,9 +45,9 @@ I mocked up about five core pages in Figma, trusting that AI could handle the re
 
 <img src="/assets/hckb_04.jpg">
 
-Then came the technical side. I initially thought of using Gatsby, but heard Astro is the way to go these days. While looking into Astro, I had a thought: "Why not just build it myself with an AI agent?"
+Then came the technical side. I initially thought of using Gatsby(<https://www.gatsbyjs.com>), but heard Astro(<https://astro.build>) is the way to go these days. While looking into Astro, I had a thought: "Why not just build it myself with an AI agent?"
 
-As luck would have it, I got a chance to try the PRO plan of a service called Lovable. I already subscribe to several AI tools, and it made me laugh at myself—I’m the type of person who leaves unread books on the shelf but rushes to borrow new ones from the library. My curiosity won, and the project began.
+As luck would have it, I got a chance to try the PRO plan of a service called Lovable(<https://lovable.dev>). I already subscribe to several AI tools, and it made me laugh at myself—I’m the type of person who leaves unread books on the shelf but rushes to borrow new ones from the library. My curiosity won, and the project began.
 &nbsp;
 
 &nbsp; 
