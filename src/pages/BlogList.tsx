@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/Layout';
 import { getBlogPosts, categories } from '@/lib/content';
 import { useLanguage } from '@/hooks/useLanguage';
@@ -131,6 +132,10 @@ const BlogList = () => {
   
   return (
     <Layout>
+      <Helmet>
+        <title>{currentLang === 'ko' ? '블로그 | HACO&KEBU' : 'Blog | HACO&KEBU'}</title>
+        <meta name="description" content={currentLang === 'ko' ? '하코케부의 블로그 글 목록' : 'Blog posts from HACO & KEBU'} />
+      </Helmet>
       <div className="py-12 md:py-16">
         <div className="container-main">
           {/* Category Filter */}
