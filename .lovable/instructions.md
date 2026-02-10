@@ -66,7 +66,7 @@ HACO & KEBU is a bilingual (Korean/English) portfolio and blog website for a sol
 
 - `scripts/generate-sitemap.ts` — generates `dist/sitemap.xml` with hreflang alternates
 - `scripts/generate-rss.ts` — generates `dist/rss.xml` feed
-- `scripts/generate-spa-redirects.ts` — generates 404 fallback for SPA routing on GitHub Pages
+- `scripts/generate-spa-redirects.ts` — generates `index.html` copies for SPA routing on GitHub Pages (static routes + dynamic blog/project routes auto-detected from markdown `id` fields)
 
 ## Static Files
 
@@ -80,4 +80,5 @@ HACO & KEBU is a bilingual (Korean/English) portfolio and blog website for a sol
 - Use `@/` path alias for imports
 - Blog images use `<img src="/assets/...">` format (standard HTML, no space around `=`)
 - SEO: each page sets meta tags via react-helmet-async
+- hreflang: `HreflangTags` component in `Layout` auto-inserts `<link rel="alternate" hreflang="en|ko|x-default">` and `<html lang>` on every page
 - Unicorn Studio script is embedded in the Hero section
