@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/hooks/useLanguage';
 import Layout from '@/components/Layout';
@@ -10,6 +11,10 @@ import RecentBlogSection from '@/components/landing/RecentBlogSection';
 const Index = () => {
   const { currentLang } = useLanguage();
   const isKo = currentLang === 'ko';
+
+  useEffect(() => {
+    document.title = 'HACO&KEBU';
+  }, []);
 
   return (
     <Layout>
