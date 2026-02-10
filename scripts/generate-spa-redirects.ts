@@ -9,14 +9,35 @@ import * as path from 'path';
 
 const DIST_DIR = 'dist';
 
-// Routes that need their own index.html for direct access
-const SPA_ROUTES = [
+// Static routes that need their own index.html
+const STATIC_ROUTES = [
   '/blog',
   '/project',
   '/ko',
   '/ko/blog',
   '/ko/project',
 ];
+
+interface ContentEntry {
+  id: string;
+}
+
+function parseFrontmatterId(content: string): string | null {
+  const match = content.match(/^---\n[\s\S]*?^id:\s*(.+)$/m);
+  if (!match) return null;
+  return match[1].trim().replace(/^["']|["']$/g, '');
+}
+
+function getContentIds(dir: string): string[] {
+  if (!fs.existsSync(dir)) return [];
+  return fs.readdirSync(dir)
+    .filter(file => file.endsWith('.md'))
+    .map(file => {
+      const content = fs.readFileSync(path.join(dir, file), 'utf-8');
+      return parseFrontmatterId(content);
+    })
+    .filter((id): id is string => id !== null);
+}
 
 function generateSpaRedirects(): void {
   const indexHtmlPath = path.join(DIST_DIR, 'index.html');
@@ -28,7 +49,23 @@ function generateSpaRedirects(): void {
 
   const indexHtmlContent = fs.readFileSync(indexHtmlPath, 'utf-8');
 
-  for (const route of SPA_ROUTES) {
+  // Collect dynamic routes from markdown content
+  const blogIds = getContentIds(path.join(process.cwd(), 'src', 'content', 'blog', 'en'));
+  const projectIds = getContentIds(path.join(process.cwd(), 'src', 'content', 'projects', 'en'));
+
+  const dynamicRoutes: string[] = [];
+  for (const id of blogIds) {
+    dynamicRoutes.push(`/blog/${id}`);
+    dynamicRoutes.push(`/ko/blog/${id}`);
+  }
+  for (const id of projectIds) {
+    dynamicRoutes.push(`/project/${id}`);
+    dynamicRoutes.push(`/ko/project/${id}`);
+  }
+
+  const allRoutes = [...STATIC_ROUTES, ...dynamicRoutes];
+
+  for (const route of allRoutes) {
     const routeDir = path.join(DIST_DIR, route);
     const routeIndexPath = path.join(routeDir, 'index.html');
 
@@ -42,7 +79,7 @@ function generateSpaRedirects(): void {
     console.log(`✓ Created ${routeIndexPath}`);
   }
 
-  console.log(`\n✅ SPA redirects generated for ${SPA_ROUTES.length} routes`);
+  console.log(`\n✅ SPA redirects generated for ${allRoutes.length} routes (${STATIC_ROUTES.length} static + ${dynamicRoutes.length} dynamic)`);
 }
 
 generateSpaRedirects();
