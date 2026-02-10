@@ -1,5 +1,6 @@
 import { Link, useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet-async';
 import Layout from '@/components/Layout';
 import { getProjects } from '@/lib/content';
 import { useLanguage } from '@/hooks/useLanguage';
@@ -110,6 +111,10 @@ const ProjectList = () => {
   
   return (
     <Layout>
+      <Helmet>
+        <title>{currentLang === 'ko' ? '프로젝트 | HACO&KEBU' : 'Projects | HACO&KEBU'}</title>
+        <meta name="description" content={currentLang === 'ko' ? '하코케부의 프로젝트 목록' : 'Projects by HACO & KEBU'} />
+      </Helmet>
       <div className="py-12 md:py-16">
         <div className="container-main">
           {paginatedProjects.length > 0 ? (
