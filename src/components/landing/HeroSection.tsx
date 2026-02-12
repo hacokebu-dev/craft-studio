@@ -8,38 +8,39 @@ const HeroSection = () => {
   
   useEffect(() => {
     const initUnicornStudio = () => {
-      const us = (window as any).UnicornStudio;
-      if (us && typeof us.init === 'function') {
-        if (typeof us.destroy === 'function') {
-          us.destroy();
-        }
-        us.init();
-        // Check for canvas to determine when loaded
-        const checkLoaded = setInterval(() => {
-          const canvas = containerRef.current?.querySelector('canvas');
-          if (canvas) {
-            setIsLoaded(true);
-            clearInterval(checkLoaded);
+      try {
+        const us = (window as any).UnicornStudio;
+        if (us && typeof us.init === 'function') {
+          if (typeof us.destroy === 'function') {
+            us.destroy();
           }
-        }, 50);
-        // Cleanup interval after 5 seconds max
-        setTimeout(() => clearInterval(checkLoaded), 5000);
+          us.init();
+          const checkLoaded = setInterval(() => {
+            const canvas = containerRef.current?.querySelector('canvas');
+            if (canvas) {
+              setIsLoaded(true);
+              clearInterval(checkLoaded);
+            }
+          }, 50);
+          setTimeout(() => clearInterval(checkLoaded), 5000);
+        }
+      } catch (e) {
+        console.warn('UnicornStudio init error:', e);
       }
     };
 
-    if (!(window as any).UnicornStudio) {
-      const script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.0.0/dist/unicornStudio.umd.js';
-      script.async = true;
-      script.onload = () => {
-        initUnicornStudio();
-      };
-      document.head.appendChild(script);
+    // Script is loaded via defer in index.html
+    if ((window as any).UnicornStudio) {
+      initUnicornStudio();
     } else {
-      const timer = setTimeout(() => {
-        initUnicornStudio();
+      // Wait for deferred script to load
+      const check = setInterval(() => {
+        if ((window as any).UnicornStudio) {
+          clearInterval(check);
+          initUnicornStudio();
+        }
       }, 100);
-      return () => clearTimeout(timer);
+      setTimeout(() => clearInterval(check), 10000);
     }
   }, []);
   
