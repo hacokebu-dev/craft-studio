@@ -14,15 +14,27 @@ const HeroSection = () => {
           if (typeof us.destroy === 'function') {
             us.destroy();
           }
-          us.init();
-          const checkLoaded = setInterval(() => {
-            const canvas = containerRef.current?.querySelector('canvas');
-            if (canvas) {
-              setIsLoaded(true);
-              clearInterval(checkLoaded);
-            }
-          }, 50);
-          setTimeout(() => clearInterval(checkLoaded), 5000);
+          Promise.resolve(us.init()).then(() => {
+            const checkLoaded = setInterval(() => {
+              const canvas = containerRef.current?.querySelector('canvas');
+              if (canvas) {
+                setIsLoaded(true);
+                clearInterval(checkLoaded);
+              }
+            }, 50);
+            setTimeout(() => clearInterval(checkLoaded), 5000);
+          }).catch((e: unknown) => {
+            console.warn('UnicornStudio init error:', e);
+            // Still check if canvas rendered despite error
+            const checkLoaded = setInterval(() => {
+              const canvas = containerRef.current?.querySelector('canvas');
+              if (canvas) {
+                setIsLoaded(true);
+                clearInterval(checkLoaded);
+              }
+            }, 50);
+            setTimeout(() => clearInterval(checkLoaded), 5000);
+          });
         }
       } catch (e) {
         console.warn('UnicornStudio init error:', e);
