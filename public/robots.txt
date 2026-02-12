@@ -2,7 +2,6 @@
 User-agent: *
 Allow: /
 Disallow: /placeholder.svg
-Disallow: /*.svg$
 Disallow: /*.ico$
 Disallow: /search/
 Disallow: /*.php
