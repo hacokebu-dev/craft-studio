@@ -5,47 +5,40 @@ const HeroSection = () => {
   const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const initRef = useRef(false);
   
   useEffect(() => {
-    const initUnicornStudio = () => {
-      try {
-        const us = (window as any).UnicornStudio;
-        if (us && typeof us.init === 'function') {
-          if (typeof us.destroy === 'function') {
-            us.destroy();
-          }
-          Promise.resolve(us.init()).then(() => {
-            const checkLoaded = setInterval(() => {
-              const canvas = containerRef.current?.querySelector('canvas');
-              if (canvas) {
-                setIsLoaded(true);
-                clearInterval(checkLoaded);
-              }
-            }, 50);
-            setTimeout(() => clearInterval(checkLoaded), 5000);
-          }).catch((e: unknown) => {
-            console.warn('UnicornStudio init error:', e);
-            // Still check if canvas rendered despite error
-            const checkLoaded = setInterval(() => {
-              const canvas = containerRef.current?.querySelector('canvas');
-              if (canvas) {
-                setIsLoaded(true);
-                clearInterval(checkLoaded);
-              }
-            }, 50);
-            setTimeout(() => clearInterval(checkLoaded), 5000);
-          });
+    // Prevent double init in strict mode
+    if (initRef.current) return;
+    initRef.current = true;
+
+    const watchCanvas = () => {
+      const checkLoaded = setInterval(() => {
+        const canvas = containerRef.current?.querySelector('canvas');
+        if (canvas) {
+          setIsLoaded(true);
+          clearInterval(checkLoaded);
         }
-      } catch (e) {
-        console.warn('UnicornStudio init error:', e);
+      }, 50);
+      setTimeout(() => clearInterval(checkLoaded), 8000);
+    };
+
+    const initUnicornStudio = () => {
+      const us = (window as any).UnicornStudio;
+      if (us && typeof us.init === 'function') {
+        // Do NOT call destroy() before first init - it corrupts internal cache
+        Promise.resolve(us.init()).then(() => {
+          watchCanvas();
+        }).catch(() => {
+          // Even on error, the canvas may still render
+          watchCanvas();
+        });
       }
     };
 
-    // Script is loaded via defer in index.html
     if ((window as any).UnicornStudio) {
       initUnicornStudio();
     } else {
-      // Wait for deferred script to load
       const check = setInterval(() => {
         if ((window as any).UnicornStudio) {
           clearInterval(check);
