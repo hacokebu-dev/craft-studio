@@ -1,37 +1,20 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const HeroSection = () => {
   const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isLoaded, setIsLoaded] = useState(false);
   const initRef = useRef(false);
   
   useEffect(() => {
-    // Prevent double init in strict mode
     if (initRef.current) return;
     initRef.current = true;
-
-    const watchCanvas = () => {
-      const checkLoaded = setInterval(() => {
-        const canvas = containerRef.current?.querySelector('canvas');
-        if (canvas) {
-          setIsLoaded(true);
-          clearInterval(checkLoaded);
-        }
-      }, 50);
-      setTimeout(() => clearInterval(checkLoaded), 8000);
-    };
 
     const initUnicornStudio = () => {
       const us = (window as any).UnicornStudio;
       if (us && typeof us.init === 'function') {
-        // Do NOT call destroy() before first init - it corrupts internal cache
-        Promise.resolve(us.init()).then(() => {
-          watchCanvas();
-        }).catch(() => {
-          // Even on error, the canvas may still render
-          watchCanvas();
+        Promise.resolve(us.init()).catch(() => {
+          // cache error is a known library issue; canvas may still render
         });
       }
     };
@@ -55,11 +38,14 @@ const HeroSection = () => {
       <div 
         ref={containerRef}
         data-us-project="HglN3zIeCBisiuYg6E4k" 
-        className={`absolute inset-0 w-full h-full transition-opacity duration-700 ${
-          isLoaded ? 'opacity-100' : 'opacity-0'
-        }`}
+        className="absolute inset-0 w-full h-full"
         style={{ width: '100%', height: '100%' }}
-      />
+      >
+        {/* 구글 봇을 위한 정적 백업 이미지 */}
+        <noscript>
+          <img src="/og-image.jpg" alt="HACO &amp; KEBU Hero Background" className="w-full h-full object-cover" />
+        </noscript>
+      </div>
       
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 bg-background/20" />
