@@ -1,7 +1,8 @@
 # 기본 크롤러 설정
 User-agent: *
 Allow: /
-Disallow: /assets/
+Disallow: /assets/*.jpg$
+Disallow: /assets/*.png$
 Disallow: /placeholder.svg
 Disallow: /*.svg$
 Disallow: /*.ico$
