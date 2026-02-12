@@ -38,16 +38,13 @@ const HeroSection = () => {
       <div 
         ref={containerRef}
         data-us-project="HglN3zIeCBisiuYg6E4k" 
-        className="absolute inset-0 w-full h-full z-0"
+        className="absolute inset-0 w-full h-full"
         style={{ width: '100%', height: '100%' }}
       >
-        {/* 구글 봇용 정적 배경: canvas가 덮기 전까지 노출됨 */}
-        <img 
-          src="/og-image.jpg" 
-          alt="HACO &amp; KEBU Hero Background" 
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ zIndex: -1 }}
-        />
+        {/* 구글 봇을 위한 정적 백업 이미지 */}
+        <noscript>
+          <img src="/og-image.jpg" alt="HACO &amp; KEBU Hero Background" className="w-full h-full object-cover" />
+        </noscript>
       </div>
       
       {/* Overlay for better text readability */}
