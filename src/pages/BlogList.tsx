@@ -135,6 +135,7 @@ const BlogList = () => {
       <Helmet>
         <title>{currentLang === 'ko' ? '블로그 | HACO&KEBU' : 'Blog | HACO&KEBU'}</title>
         <meta name="description" content={currentLang === 'ko' ? '하코케부의 블로그 글 목록' : 'Blog posts from HACO & KEBU'} />
+        <link rel="canonical" href={`https://hacokebu.com/${currentLang === 'ko' ? 'ko/' : ''}blog/`} />
       </Helmet>
       <div className="py-12 md:py-16">
         <div className="container-main">

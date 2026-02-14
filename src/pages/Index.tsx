@@ -21,6 +21,7 @@ const Index = () => {
       <Helmet>
         <title>HACO&KEBU</title>
         <meta name="description" content={isKo ? '작은 디지털 도구와 장난감을 만듭니다' : 'Create small digital tools and toys'} />
+        <link rel="canonical" href={`https://hacokebu.com/${isKo ? 'ko/' : ''}`} />
       </Helmet>
       <HeroSection />
       <IntroductionSection />

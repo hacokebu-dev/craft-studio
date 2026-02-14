@@ -21,8 +21,8 @@ const HreflangTags = () => {
     koPath = pathname === '/' ? '/ko' : `/ko${pathname}`;
   }
   
-  const enUrl = `${SITE_URL}${enPath}`;
-  const koUrl = `${SITE_URL}${koPath}`;
+  const enUrl = `${SITE_URL}${enPath}${enPath.endsWith('/') ? '' : '/'}`;
+  const koUrl = `${SITE_URL}${koPath}${koPath.endsWith('/') ? '' : '/'}`;
   
   return (
     <Helmet>

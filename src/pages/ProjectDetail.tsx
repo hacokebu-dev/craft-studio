@@ -27,7 +27,7 @@ const ProjectDetail = () => {
 
   const metaDescription = project.description || project.content.substring(0, 155).replace(/[#*_\n]/g, '');
   const ogImage = project.ogImage || project.thumbnail;
-  const canonicalUrl = `https://hacokebu.com/${currentLang === 'ko' ? 'ko/' : ''}project/${id}`;
+  const canonicalUrl = `https://hacokebu.com/${currentLang === 'ko' ? 'ko/' : ''}project/${id}/`;
   
   const creativeWorkSchema = {
     "@context": "https://schema.org",
