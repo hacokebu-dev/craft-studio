@@ -71,8 +71,8 @@ function formatDateW3C(dateStr: string): string {
 }
 
 function generateUrlEntry(enPath: string, koPath: string, lastmod: string, priority: string): string {
-  const enUrl = `${SITE_URL}${enPath}`;
-  const koUrl = `${SITE_URL}${koPath}`;
+  const enUrl = `${SITE_URL}${enPath}${enPath.endsWith('/') ? '' : '/'}`;
+  const koUrl = `${SITE_URL}${koPath}${koPath.endsWith('/') ? '' : '/'}`;
   
   return `  <url>
     <loc>${enUrl}</loc>
