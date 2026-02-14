@@ -26,7 +26,7 @@ const BlogDetail = () => {
   }
   
   const metaDescription = post.description || post.content.substring(0, 155).replace(/[#*_\n]/g, '');
-  const canonicalUrl = `https://hacokebu.com/${currentLang === 'ko' ? 'ko/' : ''}blog/${id}`;
+  const canonicalUrl = `https://hacokebu.com/${currentLang === 'ko' ? 'ko/' : ''}blog/${id}/`;
   
   const blogPostingSchema = {
     "@context": "https://schema.org",

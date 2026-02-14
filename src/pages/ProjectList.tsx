@@ -114,6 +114,7 @@ const ProjectList = () => {
       <Helmet>
         <title>{currentLang === 'ko' ? '프로젝트 | HACO&KEBU' : 'Projects | HACO&KEBU'}</title>
         <meta name="description" content={currentLang === 'ko' ? '하코케부의 프로젝트 목록' : 'Projects by HACO & KEBU'} />
+        <link rel="canonical" href={`https://hacokebu.com/${currentLang === 'ko' ? 'ko/' : ''}project/`} />
       </Helmet>
       <div className="py-12 md:py-16">
         <div className="container-main">
