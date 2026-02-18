@@ -81,4 +81,5 @@ HACO & KEBU is a bilingual (Korean/English) portfolio and blog website for a sol
 - Blog images use `<img src="/assets/...">` format (standard HTML, no space around `=`)
 - SEO: each page sets meta tags via react-helmet-async
 - hreflang: `HreflangTags` component in `Layout` auto-inserts `<link rel="alternate" hreflang="en|ko|x-default">` and `<html lang>` on every page
+- **Trailing Slash**: 모든 URL(sitemap, canonical, hreflang, og:url)은 반드시 `/`로 끝나야 함. GitHub Pages의 301 리디렉션으로 인한 Google 색인 오류 방지를 위한 필수 규칙
 - Unicorn Studio script is embedded in the Hero section
