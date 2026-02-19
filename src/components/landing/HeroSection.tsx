@@ -38,7 +38,7 @@ const HeroSection = () => {
       <div 
         ref={containerRef}
         data-us-project="HglN3zIeCBisiuYg6E4k" 
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full animate-[fade-in_1.5s_ease-out]"
         style={{ width: '100%', height: '100%' }}
       >
         {/* 구글 봇을 위한 정적 백업 이미지 */}
