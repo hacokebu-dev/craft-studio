@@ -1,10 +1,11 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const HeroSection = () => {
   const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
   const initRef = useRef(false);
+  const [isLoaded, setIsLoaded] = useState(false);
   
   useEffect(() => {
     if (initRef.current) return;
@@ -13,8 +14,11 @@ const HeroSection = () => {
     const initUnicornStudio = () => {
       const us = (window as any).UnicornStudio;
       if (us && typeof us.init === 'function') {
-        Promise.resolve(us.init()).catch(() => {
+        Promise.resolve(us.init()).then(() => {
+          setIsLoaded(true);
+        }).catch(() => {
           // cache error is a known library issue; canvas may still render
+          setIsLoaded(true);
         });
       }
     };
@@ -28,7 +32,10 @@ const HeroSection = () => {
           initUnicornStudio();
         }
       }, 100);
-      setTimeout(() => clearInterval(check), 10000);
+      setTimeout(() => {
+        clearInterval(check);
+        setIsLoaded(true); // fallback: show anyway after timeout
+      }, 10000);
     }
   }, []);
   
@@ -38,7 +45,7 @@ const HeroSection = () => {
       <div 
         ref={containerRef}
         data-us-project="HglN3zIeCBisiuYg6E4k" 
-        className="absolute inset-0 w-full h-full animate-[fade-in_1.5s_ease-out]"
+        className={`absolute inset-0 w-full h-full transition-opacity duration-[1.5s] ease-out ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
         style={{ width: '100%', height: '100%' }}
       >
         {/* 구글 봇을 위한 정적 백업 이미지 */}
